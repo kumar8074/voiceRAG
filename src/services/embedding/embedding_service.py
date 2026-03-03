@@ -14,6 +14,11 @@ from langchain_core.documents import Document
 from typing import List
 from ...config import EMBEDDING_MODEL, EMBEDDING_BATCH_SIZE, EMBEDDING_DIMENSION
 
+def normalize(vectors: List[List[float]]) -> List[List[float]]:
+    """Convert embeddings to unit vectors."""
+    arr = np.array(vectors)
+    norms = np.linalg.norm(arr, axis=1, keepdims=True)
+    return (arr / norms).tolist()
 
 class EmbeddingService:
     def __init__(self, model=EMBEDDING_MODEL, batch_size=EMBEDDING_BATCH_SIZE, embedding_dim=EMBEDDING_DIMENSION):
@@ -25,13 +30,19 @@ class EmbeddingService:
     def _embed_batch(self,texts:list[str])->List[list[float]]:
         embeddings=self.model.feature_extraction(texts)
         
-        if not isinstance(embeddings,np.ndarray):
+        if isinstance(embeddings, np.ndarray):
             embeddings=embeddings.tolist()
+         
+        # For query   
+        if isinstance(embeddings[0], float):
+            embeddings = [embeddings]
         
         if len(embeddings[0])!=self.embedding_dim:
             raise ValueError(f"Expected embedding dimension {self.embedding_dim}, got {len(embeddings[0])}")
         
-        return embeddings
+        # Normalize
+        normalized_embeddings=normalize(embeddings)
+        return normalized_embeddings        
         
 
     # Embed documents in batches
@@ -46,9 +57,7 @@ class EmbeddingService:
             batch_docs=documents[i:i+self.batch_size]
             batch_texts=[f"passage: {doc.page_content}" for doc in batch_docs]
             
-            for idx in range(len(batch_docs)):
-                global_index=i+idx+1
-                print(f"Embedding document {global_index}/{total}")
+            print(f"Processing batch {i // self.batch_size + 1} ({len(batch_docs)} documents)")
                 
             batch_embeddings=self._embed_batch(batch_texts)
             all_embeddings.extend(batch_embeddings)
@@ -97,6 +106,7 @@ if __name__ == "__main__":
     
     start_time = time()
     query_embedding=embedding_service.embed_query("What are the benefits of Startup India initiative?")
+    #print(f"query embeddings: {query_embedding}")
     end_time = time()
     print(f"Generated query embedding of dimension: {len(query_embedding)}")
     print(f"Query embedding generation took {end_time - start_time:.2f} seconds.")

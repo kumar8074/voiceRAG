@@ -1,0 +1,167 @@
+# ===================================================================================
+# Project: VoiceRAG
+# File: src/services/indexing/indexer.py
+# Description: Indexing pipeline (Parse → Chunk → Embed → Qdrant)
+# Author: LALAN KUMAR
+# Created: [04-03-2026]
+# Updated: [04-03-2026]
+# LAST MODIFIED BY: LALAN KUMAR  [https://github.com/kumar8074]
+# Version: 1.0.0
+# ===================================================================================
+
+from uuid import uuid4, uuid5, NAMESPACE_DNS
+from typing import List, Dict, Any
+from datetime import datetime, timezone
+
+from qdrant_client.models import PointStruct
+from qdrant_client.models import Filter, FieldCondition, MatchValue
+
+from ...config import (
+    QDRANT_HOST,
+    QDRANT_PORT,
+    QDRANT_GRPC_PORT,
+    QDRANT_PREFER_GRPC,
+    QDRANT_TIMEOUT,
+    QDRANT_COLLECTION_NAME
+)
+
+from ..pdf_parser.parser import PDFParser
+from ..chunker.text_chunker import TextChunker
+from ..embedding.embedding_service import EmbeddingService
+from ..qdrant.factory import QdrantFactory
+
+class QdrantIndexer:
+    """
+    - Parses PDF
+    - Chunks text
+    - Generates embeddings
+    - Upserts into Qdrant
+    """
+
+    def __init__(self):
+        self.parser = PDFParser()
+        self.chunker = TextChunker()
+        self.embedder = EmbeddingService()
+
+        self.client, _ = QdrantFactory.connect(
+            host=QDRANT_HOST,
+            port=QDRANT_PORT,
+            grpc_port=QDRANT_GRPC_PORT,
+            prefer_grpc=QDRANT_PREFER_GRPC,
+            timeout=QDRANT_TIMEOUT
+        )
+
+        # Ensure collection exists
+        QdrantFactory.ensure_collection(self.client)
+
+    def index_pdf(
+        self,
+        file_path: str,
+        user_id: str,
+        doc_id: str | None = None,
+        language: str = "en"
+    ) -> Dict[str, Any]:
+
+        if not user_id:
+            raise ValueError("user_id is required for multi-tenant indexing")
+
+        if doc_id is None:
+            doc_id = str(uuid4())
+
+        # Parse
+        documents = self.parser.parse_pdf(file_path)
+        if not documents:
+            raise ValueError("No content extracted from PDF.")
+
+        # Chunk
+        chunks = self.chunker.split(documents)
+        if not chunks:
+            raise ValueError("Chunking produced no output.")
+
+        # Embed
+        embeddings = self.embedder.embed_documents(chunks)
+
+        if len(embeddings) != len(chunks):
+            raise RuntimeError("Mismatch between chunks and embeddings count.")
+
+        # Prepare Qdrant points
+        points: List[PointStruct] = []
+
+        for idx, (chunk, embedding) in enumerate(zip(chunks, embeddings)):
+
+            point_id = str(uuid5(NAMESPACE_DNS, f"{user_id}_{doc_id}_{idx}"))
+
+            payload = {
+                "user_id": user_id,
+                "doc_id": doc_id,
+                "chunk_id": f"{doc_id}_{idx}",
+                "chunk_index": idx,
+                "content": chunk.page_content,
+                "language": language,
+                "indexed_at": datetime.now(timezone.utc).isoformat()
+            }
+
+            points.append(
+                PointStruct(
+                    id=point_id,
+                    vector=embedding,
+                    payload=payload
+                )
+            )
+
+        if not points:
+            raise ValueError("No valid chunks to index.")
+
+        # Upsert in batches
+        BATCH_SIZE = 100
+
+        for i in range(0, len(points), BATCH_SIZE):
+            batch = points[i:i + BATCH_SIZE]
+
+            self.client.upsert(
+                collection_name=QDRANT_COLLECTION_NAME,
+                points=batch
+            )
+
+        result = {
+            "user_id": user_id,
+            "doc_id": doc_id,
+            "total_chunks": len(chunks),
+            "indexed_chunks": len(points)
+        }
+
+        print(f"Indexing complete: {result}")
+
+        return result
+
+    def delete_document(self, user_id: str, doc_id: str) -> int:
+        """
+        Delete all chunks belonging to a specific document for a user.
+        """
+
+        delete_filter = Filter(
+            must=[
+                FieldCondition(
+                    key="user_id",
+                    match=MatchValue(value=user_id)
+                ),
+                FieldCondition(
+                    key="doc_id",
+                    match=MatchValue(value=doc_id)
+                )
+            ]
+        )
+
+        result = self.client.delete(
+            collection_name=QDRANT_COLLECTION_NAME,
+            points_selector=delete_filter
+        )
+
+        return result.status
+
+# Example usage:
+if __name__=="__main__":
+    indexer=QdrantIndexer()
+    result=indexer.index_pdf(file_path="tmp/83577772-b923-4c40-891d-2edd3fe26fad_Startup India Kit_v5.pdf", user_id="1")
+    
+    
