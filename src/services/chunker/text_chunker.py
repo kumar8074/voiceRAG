@@ -4,7 +4,7 @@
 # Description: Splits text documents into smaller chunks for better processing.
 # Author: LALAN KUMAR
 # Created: [02-03-2026]
-# Updated: [03-03-2026]
+# Updated: [04-03-2026]
 # LAST MODIFIED BY: LALAN KUMAR  [https://github.com/kumar8074]
 # Version: 1.0.0
 # ===================================================================================
@@ -29,10 +29,23 @@ class TextChunker:
 # Example usage:
 if __name__ == "__main__":
     from ..pdf_parser.parser import PDFParser
+    from ...logger import logging
+    from time import time
+    
+    logging.info("Initiating PDF Parsing...")
+    start_time=time()
     docs=PDFParser.parse_pdf("tmp/83577772-b923-4c40-891d-2edd3fe26fad_Startup India Kit_v5.pdf")
+    end_time=time()
+    logging.info(f"Parsing Completed in {(end_time-start_time):.2f} seconds")
+    
+    logging.info("Initiating Document Chunking...")
+    start_time=time()
     chunker=TextChunker()
     chunks=chunker.split(docs)
-    print(f"Original document count: {len(docs)}")
-    print(f"Chunked document count: {len(chunks)}")
-    print(f"Type of first chunk: {type(chunks[0])}")
-    print(f"First chunk content: {chunks[0].page_content[:500]}")
+    end_time=time()
+    logging.info(f"Chunking Comleted in {(end_time-start_time):.2f}seconds")
+    
+    logging.info(f"Original document count: {len(docs)}")
+    logging.info(f"Chunked document count: {len(chunks)}")
+    logging.info(f"Type of first chunk: {type(chunks[0])}")
+    logging.info(f"First chunk content: {chunks[0].page_content[:500]}")

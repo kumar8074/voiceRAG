@@ -12,6 +12,7 @@
 from uuid import uuid4, uuid5, NAMESPACE_DNS
 from typing import List, Dict, Any
 from datetime import datetime, timezone
+from time import time
 
 from qdrant_client.models import PointStruct
 from qdrant_client.models import Filter, FieldCondition, MatchValue
@@ -29,6 +30,7 @@ from ..pdf_parser.parser import PDFParser
 from ..chunker.text_chunker import TextChunker
 from ..embedding.embedding_service import EmbeddingService
 from ..qdrant.factory import QdrantFactory
+from ...logger import logging
 
 class QdrantIndexer:
     """
@@ -63,27 +65,44 @@ class QdrantIndexer:
     ) -> Dict[str, Any]:
 
         if not user_id:
+            logging.error("user_id is required for multi-tenant indexing")
             raise ValueError("user_id is required for multi-tenant indexing")
 
         if doc_id is None:
             doc_id = str(uuid4())
 
         # Parse
+        logging.info("Initiating PDF Parsing...")
+        start_time=time()
         documents = self.parser.parse_pdf(file_path)
+        end_time=time()
+        logging.info(f"Parsing Completed in {(end_time-start_time):2f}seconds")
         if not documents:
+            logging.error("No content extracted from PDF.")
             raise ValueError("No content extracted from PDF.")
 
         # Chunk
+        logging.info("Initiating Documents chunking...")
+        start_time=time()
         chunks = self.chunker.split(documents)
+        end_time=time()
+        logging.info(f"Documents chunking completed in {(end_time-start_time):.2f}seconds")
         if not chunks:
+            logging.error("Chunking produced no output.")
             raise ValueError("Chunking produced no output.")
 
         # Embed
+        logging.info("Initiating chunks embedding process...")
+        start_time=time()
         embeddings = self.embedder.embed_documents(chunks)
+        end_time=time()
+        logging.info(f"Embeddings generated in {(end_time-start_time):.2f}seconds")
 
         if len(embeddings) != len(chunks):
+            logging.error("Mismatch between chunks and embeddings count.")
             raise RuntimeError("Mismatch between chunks and embeddings count.")
 
+        logging.info("Preparing Qdrant for Indexing...")
         # Prepare Qdrant points
         points: List[PointStruct] = []
 
@@ -110,6 +129,7 @@ class QdrantIndexer:
             )
 
         if not points:
+            logging.error("No valid chunks to index.")
             raise ValueError("No valid chunks to index.")
 
         # Upsert in batches
@@ -130,7 +150,7 @@ class QdrantIndexer:
             "indexed_chunks": len(points)
         }
 
-        print(f"Indexing complete: {result}")
+        logging.info(f"Indexing complete: {result}")
 
         return result
 
@@ -152,6 +172,7 @@ class QdrantIndexer:
             ]
         )
 
+        logging.info(f"Initiating index deletion for {user_id}...")
         result = self.client.delete(
             collection_name=QDRANT_COLLECTION_NAME,
             points_selector=delete_filter

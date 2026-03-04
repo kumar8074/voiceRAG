@@ -3,7 +3,7 @@
 # File: src/services/qdrant/factory.py
 # Description: Connects to Qdrant
 # Author: LALAN KUMAR
-# Created: [03-03-2026]
+# Created: [04-03-2026]
 # Updated: [04-03-2026]
 # LAST MODIFIED BY: LALAN KUMAR  [https://github.com/kumar8074]
 # Version: 1.0.0
@@ -20,6 +20,7 @@ from ...config import (
     QDRANT_PREFER_GRPC,
     QDRANT_TIMEOUT
 )
+from ...logger import logging
 from .collection_config import get_collection_config
 
 class QdrantFactory:
@@ -41,7 +42,7 @@ class QdrantFactory:
             Tuple[QdrantClient, health_info]
         """
 
-        print("Connecting to Qdrant...")
+        logging.info("Connecting to Qdrant...")
 
         try:
             client = QdrantClient(
@@ -55,15 +56,15 @@ class QdrantFactory:
             # Health check
             health = client.get_collections()
 
-            print("Qdrant connection established successfully.")
+            logging.info("Qdrant connection established successfully.")
             return client, {"status": "healthy", "collections": health.collections}
 
         except UnexpectedResponse as e:
-            print(f"Qdrant returned unexpected response: {e}")
+            logging.error(f"Qdrant returned unexpected response: {e}")
             raise
 
         except Exception as e:
-            print(f"Failed to connect to Qdrant at {host}:{port}: {e}")
+            logging.error(f"Failed to connect to Qdrant at {host}:{port}: {e}")
             raise
 
 
@@ -76,17 +77,17 @@ class QdrantFactory:
         existing_collections = [c.name for c in client.get_collections().collections]
 
         if QDRANT_COLLECTION_NAME in existing_collections:
-            print(f"Collection already exists: {QDRANT_COLLECTION_NAME}")
+            logging.info(f"Collection already exists: {QDRANT_COLLECTION_NAME}")
             return
 
-        print(f"Creating collection: {QDRANT_COLLECTION_NAME}")
+        logging.info(f"Creating collection: {QDRANT_COLLECTION_NAME}")
 
         client.create_collection(
             collection_name=QDRANT_COLLECTION_NAME,
             vectors_config=get_collection_config()
         )
 
-        print(f"Collection created successfully: {QDRANT_COLLECTION_NAME}")
+        logging.info(f"Collection created successfully: {QDRANT_COLLECTION_NAME}")
         
         
 # Example usage:

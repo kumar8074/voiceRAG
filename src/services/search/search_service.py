@@ -10,6 +10,7 @@
 # ===================================================================================
 
 from typing import List, Dict, Any
+from time import time
 
 from qdrant_client.models import Filter, FieldCondition, MatchValue
 
@@ -21,6 +22,7 @@ from ...config import (
     QDRANT_TIMEOUT,
     QDRANT_COLLECTION_NAME
 )
+from ...logger import logging
 
 from ..embedding.embedding_service import EmbeddingService
 from ..qdrant.factory import QdrantFactory
@@ -60,15 +62,23 @@ class SearchService:
         """
 
         if not query:
+            logging.error("No Search Query")
             raise ValueError("Query cannot be empty")
 
         if not user_id:
+            logging.error("user_id is required for multi-tenant isolation")
             raise ValueError("user_id is required for multi-tenant isolation")
 
         # Embed query
+        logging.info("Initiating query embedding...")
+        start_time=time()
         query_vector = self.embedder.embed_query(query)
+        end_time=time()
+        logging.info(f"Query Embedding sucessful in {(end_time-start_time):.2f}seconds")
 
         # Build user filter
+        logging.info("Building user filter...")
+        start_time=time()
         user_filter = Filter(
             must=[
                 FieldCondition(
@@ -79,6 +89,7 @@ class SearchService:
         )
 
         # Search Qdrant
+        logging.info("Initiating search...")
         results = self.client.query_points(
             collection_name=QDRANT_COLLECTION_NAME,
             query=query_vector,
@@ -88,7 +99,7 @@ class SearchService:
 
         # Format results
         formatted_results = []
-
+        logging.info("Formatting Result...")
         for hit in results.points:
             formatted_results.append({
                 "score": hit.score,
@@ -99,10 +110,12 @@ class SearchService:
                 "chunk_index": hit.payload.get("chunk_index"),
             })
 
+        end_time=time()
+        logging.info(f"Search completed in {(end_time-start_time):.2f}seconds")
+        logging.info(f"Search Results:{formatted_results}")
         return formatted_results
     
 # Example usage:
 if __name__ == "__main__":
     searcher=SearchService()
-    result = searcher.search(query="Startup India initiative ke kya fayde hai?", user_id="1")
-    print(result)
+    searcher.search(query="Startup India initiative ke kya fayde hai?", user_id="1")

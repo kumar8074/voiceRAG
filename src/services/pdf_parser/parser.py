@@ -4,7 +4,7 @@
 # Description: Parses PDF files and returns list of documents.
 # Author: LALAN KUMAR
 # Created: [02-03-2026]
-# Updated: [02-03-2026]
+# Updated: [04-03-2026]
 # LAST MODIFIED BY: LALAN KUMAR  [https://github.com/kumar8074]
 # Version: 1.0.0
 # ===================================================================================
@@ -26,7 +26,10 @@ class PDFParser:
   
 # Example usage:
 if __name__ == "__main__":
+    from ...logger import logging
+    
     docs = PDFParser.parse_pdf("tmp/8dffad42-d686-4691-a1b5-7ffa0b9a9880_RLAlgsInMDPs.pdf")
-    print(docs[0].page_content[:500])  # Print the first 500 characters of the first document's content
+    logging.info("PDF Parsing completed")
+    logging.info(f"Loaded content {docs[0].page_content[:500]}")  # Print the first 500 characters of the first document's content
 
 
