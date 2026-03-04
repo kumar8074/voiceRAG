@@ -21,6 +21,7 @@ from src.db.init_db import init_db
 from src.dependencies import get_qdrant_client, get_embedding_service
 from src.routers.file_upload import router as file_upload_router
 from src.routers.chat import router as chat_router
+from src.routers.voice import router as voice_ws_router 
 from src.logger import logging
 
 
@@ -57,6 +58,7 @@ app = FastAPI(
 # Routers
 app.include_router(file_upload_router)
 app.include_router(chat_router)
+app.include_router(voice_ws_router)  
 
 # Static files & UI
 os.makedirs("tmp", exist_ok=True)
