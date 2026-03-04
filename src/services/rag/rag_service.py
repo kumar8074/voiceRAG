@@ -54,6 +54,11 @@ GENERAL_PATTERNS = re.compile(
     re.VERBOSE | re.IGNORECASE
 )
 
+INTENT_CLASSIFIER_SYSTEM = """You are an intent classifier.
+Reply with ONLY a single digit — no explanation, no punctuation, nothing else:
+0 = general conversation (greetings, small talk, chit-chat, how are you, thanks, bye, casual messages in ANY language or mix of languages)
+1 = needs document search (questions about specific topics, documents, facts, data, information requests in ANY language)"""
+
 GENERAL_SYSTEM_PROMPT = """You are a friendly, helpful voice assistant.
 Respond naturally and concisely.
 Respond in the SAME language as the user's message.
@@ -63,8 +68,9 @@ class RAGService:
     """
     Core RAG orchestrator for VoiceRAG.
 
-    Flow:
-        1. Classify intent instantly via regex (zero latency)
+    Flow (2 Layer Intent classification):
+        1a. Classify intent instantly via regex (zero latency)
+        1b. LLM Classifier with max token 1, (150-200ms latency)
         2a. General  → stream LLM response directly
         2b. Document → fetch history + vector search IN PARALLEL
                      → build prompt → stream LLM response
@@ -76,19 +82,33 @@ class RAGService:
         self.searcher = SearchService()
         self.store = ConversationStore()
 
-    def _is_general_query(self, query: str) -> bool:
+    async def _is_general_query(self, query: str) -> bool:
         """
-        Regex + length heuristic — no LLM call, instant classification.
-        Short messages (<4 words) not matching document intent are also general.
+        Layer 1: regex for greetings
+        Layer 2: For edge cases
         """
+        # Layer 1
         if GENERAL_PATTERNS.match(query):
+            logging.info("Intent resolved by regex -> General")
             return True
-
-        # Short queries with no question words are likely small talk
-        words = query.strip().split()
-        if len(words) <= 3 and "?" not in query:
-            return True
-
+        
+        query_str=str(query)
+        # Layer 2
+        response = await self.llm.ainvoke(
+            [
+                SystemMessage(content=INTENT_CLASSIFIER_SYSTEM),
+                HumanMessage(content=query_str)
+            ],
+            config={"max_tokens":1}
+        )
+        intent = response.content.strip()
+        logging.info(f"Intent resolved by LLM classifier → '{intent}' for: '{query_str}'")
+        if intent == "0":
+            return True   # general
+        if intent == "1":
+            return False 
+        
+        logging.warning(f"Unexpected intent classifier response: '{intent}', defaulting to document")
         return False
 
 
@@ -118,7 +138,7 @@ class RAGService:
         if not query or not query.strip():
             raise ValueError("Query cannot be empty")
 
-        is_general = self._is_general_query(query)
+        is_general = await self._is_general_query(query)
         logging.info(f"Intent: {'general' if is_general else 'document'} — query: '{query}'")
 
         if is_general:
@@ -183,6 +203,7 @@ class RAGService:
             self.searcher.search(
                 query=query,
                 user_id=user_id,
+                session_id=session_id,
                 top_k=top_k
             )
         )

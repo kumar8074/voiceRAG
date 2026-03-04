@@ -1,6 +1,6 @@
 # ===================================================================================
 # Project: VoiceRAG
-# File: src/config.py
+# File: src/dependencies.py
 # Description: Shared application dependencies (connect once, reuse everywhere)
 # Author: LALAN KUMAR
 # Created: [04-03-2026]

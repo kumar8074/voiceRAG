@@ -43,6 +43,7 @@ class QdrantIndexer:
         self,
         file_path: str,
         user_id: str,
+        session_id: str,
         doc_id: str | None = None,
         language: str = "en"
     ) -> Dict[str, Any]:
@@ -96,6 +97,7 @@ class QdrantIndexer:
 
             payload = {
                 "user_id": user_id,
+                "session_id": session_id,
                 "doc_id": doc_id,
                 "chunk_id": f"{doc_id}_{idx}",
                 "chunk_index": idx,

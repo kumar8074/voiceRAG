@@ -37,6 +37,7 @@ class SearchService:
         self,
         query: str,
         user_id: str,
+        session_id: str,
         top_k: int = 5
     ) -> List[Dict[str, Any]]:
         """
@@ -66,10 +67,8 @@ class SearchService:
         start_time=time()
         user_filter = Filter(
             must=[
-                FieldCondition(
-                    key="user_id",
-                    match=MatchValue(value=user_id)
-                )
+                FieldCondition(key="user_id", match=MatchValue(value=user_id)),
+                FieldCondition(key="session_id", match=MatchValue(value=session_id))
             ]
         )
 
