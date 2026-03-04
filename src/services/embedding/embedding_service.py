@@ -12,6 +12,8 @@
 import numpy as np
 from langchain_core.documents import Document
 from typing import List
+import asyncio
+
 from ...config import EMBEDDING_MODEL, EMBEDDING_BATCH_SIZE, EMBEDDING_DIMENSION
 from ...logger import logging
 
@@ -26,10 +28,12 @@ class EmbeddingService:
         self.model=model
         self.batch_size=batch_size
         self.embedding_dim=embedding_dim
+        self.semaphore = asyncio.Semaphore(5)  # max concurrent requests
     
     # Batch processor
-    def _embed_batch(self,texts:list[str])->List[list[float]]:
-        embeddings=self.model.feature_extraction(texts)
+    async def _embed_batch(self,texts:list[str])->List[list[float]]:
+        async with self.semaphore:
+            embeddings=await self.model.feature_extraction(texts)
         
         if isinstance(embeddings, np.ndarray):
             embeddings=embeddings.tolist()
@@ -48,46 +52,53 @@ class EmbeddingService:
         
 
     # Embed documents in batches
-    def embed_documents(self, documents:List[Document])->List[list[float]]:
+    async def embed_documents(self, documents:List[Document])->List[list[float]]:
         if not documents:
             return []
         
         all_embeddings=[]
+        tasks=[]
         total=len(documents)
         
         for i in range(0, total, self.batch_size):
             batch_docs=documents[i:i+self.batch_size]
             batch_texts=[f"passage: {doc.page_content}" for doc in batch_docs]
             
-            logging.info(f"Processing batch {i // self.batch_size + 1} ({len(batch_docs)} documents)")
-                
-            batch_embeddings=self._embed_batch(batch_texts)
-            all_embeddings.extend(batch_embeddings)
+            logging.info(f"Scheduling batch {i // self.batch_size + 1} ({len(batch_docs)} documents)")
+            
+            tasks.append(self._embed_batch(batch_texts))
+            
+        # Run all embedding requests concurrently
+        results = await asyncio.gather(*tasks)
+            #batch_embeddings=await self._embed_batch(batch_texts)
+            #all_embeddings.extend(batch_embeddings)
+        
+        # Flatten results
+        for batch in results:
+            all_embeddings.extend(batch)
         
         return all_embeddings
     
     # Embed query text (for later similarity search)
-    def embed_query(self, query:str)->list[float]:
+    async def embed_query(self, query:str)->list[float]:
         if not query:
             raise ValueError("Query text cannot be empty")
         
         # Required prefix for E5 models
         prefixed_query = f"query: {query}"
         
-        query_embedding=self._embed_batch([prefixed_query])[0] # Ensure same dimension as document embeddings
+        query_embedding= (await self._embed_batch([prefixed_query]))[0] # Ensure same dimension as document embeddings
         
         return query_embedding
     
-    
-    
 # Example usage:
-if __name__ == "__main__":
+async def main():
     from ..pdf_parser.parser import PDFParser
     from ..chunker.text_chunker import TextChunker
     from time import time
     
     start_time = time()
-    docs=PDFParser.parse_pdf("tmp/83577772-b923-4c40-891d-2edd3fe26fad_Startup India Kit_v5.pdf")
+    docs=await PDFParser.parse_pdf("tmp/83577772-b923-4c40-891d-2edd3fe26fad_Startup India Kit_v5.pdf")
     end_time = time()
     logging.info(f"PDF parsing took {(end_time - start_time):.2f} seconds for {len(docs)} documents.")
     
@@ -96,10 +107,10 @@ if __name__ == "__main__":
     chunks=chunker.split(docs)
     end_time = time()
     logging.info(f"Text chunking took {(end_time - start_time):.2f} seconds for {len(chunks)} chunks.")
-    
+
     start_time = time()
     embedding_service=EmbeddingService()
-    embeddings=embedding_service.embed_documents(chunks)
+    embeddings=await embedding_service.embed_documents(chunks)
     end_time = time()
     logging.info(f"Embedding generation took {(end_time - start_time):.2f} seconds for {len(chunks)} chunks.")
     
@@ -107,9 +118,14 @@ if __name__ == "__main__":
     logging.info(f"Embedding dimension: {len(embeddings[0])}")
     
     start_time = time()
-    query_embedding=embedding_service.embed_query("What are the benefits of Startup India initiative?")
-    #print(f"query embeddings: {query_embedding}")
+    query_embedding=await embedding_service.embed_query("What are the benefits of Startup India initiative?")
     end_time = time()
     logging.info(f"Generated query embedding of dimension: {len(query_embedding)}")
     logging.info(f"Query embedding generation took {(end_time - start_time):.2f} seconds.")
+    
+    
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
     

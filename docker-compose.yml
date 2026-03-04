@@ -12,6 +12,18 @@ services:
       QDRANT__SERVICE__GRPC_PORT: 6334
       QDRANT__STORAGE__WAL__ENABLED: "true"
     restart: unless-stopped
+  postgres:
+    image: postgres:16
+    container_name: voicerag-postgres
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
 
 volumes:
   qdrant_storage:
+  postgres_data:

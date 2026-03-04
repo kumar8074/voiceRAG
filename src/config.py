@@ -13,13 +13,20 @@ import os
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from pydantic import Field
 from langchain_openai import ChatOpenAI
-from huggingface_hub import InferenceClient
+from huggingface_hub import AsyncInferenceClient
 from dotenv import load_dotenv
 load_dotenv()
 
 # Set Sarvam API Key
 os.environ["OPENAI_API_KEY"] = os.getenv("SARVAM_API_KEY")
 os.environ["HF_TOKEN"]= os.getenv("HF_TOKEN")
+os.environ["QDRANT_HOST"]=os.getenv("QDRANT_HOST")
+os.environ["QDRANT_PORT"]=os.getenv("QDRANT_PORT")
+os.environ["POSTGRES_HOST"]=os.getenv("POSTGRES_HOST")
+os.environ["POSTGRES_PORT"]=os.getenv("POSTGRES_PORT")
+os.environ["POSTGRES_DB"]=os.getenv("POSTGRES_DB")
+os.environ["POSTGRES_USER"]=os.getenv("POSTGRES_USER")
+os.environ["POSTGRES_PASSWORD"]=os.getenv("POSTGRES_PASSWORD")
 
 class ChunkerConfig(BaseSettings):
     chunk_size: int = Field(default=800, description="The size of each text chunk.")
@@ -69,12 +76,27 @@ class QdrantConfig(BaseSettings):
         case_sensitive=False,
         extra="ignore"
     )
+    
+class PostgresConfig(BaseSettings):
+    """Postgres Configuration"""
+    postgres_host: str = Field(default="localhost")
+    postgres_port: int = Field(default=5433)
+    postgres_db: str = Field(default="voicerag_db")
+    postgres_user: str = Field(default="voicerag_user")
+    postgres_password: str = Field(default="voicerag")
+    
+    model_config=SettingsConfigDict(
+        env_prefix="POSTGRES_",
+        case_sensitive=False,
+        extra="ignore"
+    )
   
 # Initialize configurations    
 chunker_config = ChunkerConfig()
 llm_config = LLMConfig()
 embedding_config = EmbeddingConfig()
 qdrant_config = QdrantConfig()
+postgres_config = PostgresConfig()
 
 
 # Initialize models
@@ -85,7 +107,7 @@ LLM_MODEL = ChatOpenAI(
 )
 
 
-EMBEDDING_MODEL = InferenceClient(
+EMBEDDING_MODEL = AsyncInferenceClient(
     model=embedding_config.model,
     provider=embedding_config.provider
 )
@@ -101,3 +123,8 @@ QDRANT_COLLECTION_NAME=qdrant_config.collection_name
 QDRANT_GRPC_PORT=qdrant_config.grpc_port
 QDRANT_PREFER_GRPC=qdrant_config.prefer_grpc
 QDRANT_TIMEOUT=qdrant_config.timeout
+POSTGRES_HOST=postgres_config.postgres_host
+POSTGRES_PORT=postgres_config.postgres_port
+POSTGRES_DB=postgres_config.postgres_db
+POSTGRES_USER=postgres_config.postgres_user
+POSTGRES_PASSWORD=postgres_config.postgres_password

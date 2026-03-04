@@ -33,7 +33,7 @@ class SearchService:
 
         self.client = get_qdrant_client()
 
-    def search(
+    async def search(
         self,
         query: str,
         user_id: str,
@@ -57,7 +57,7 @@ class SearchService:
         # Embed query
         logging.info("Initiating query embedding...")
         start_time=time()
-        query_vector = self.embedder.embed_query(query)
+        query_vector = await self.embedder.embed_query(query)
         end_time=time()
         logging.info(f"Query Embedding sucessful in {(end_time-start_time):.2f}seconds")
 
@@ -102,5 +102,7 @@ class SearchService:
     
 # Example usage:
 if __name__ == "__main__":
+    import asyncio
     searcher=SearchService()
-    searcher.search(query="Startup India initiative ke kya fayde hai?", user_id="1")
+    
+    asyncio.run(searcher.search(query="Startup India initiative ke kya fayde hai?", user_id="1"))

@@ -39,7 +39,7 @@ class QdrantIndexer:
 
         self.client = get_qdrant_client()
 
-    def index_pdf(
+    async def index_pdf(
         self,
         file_path: str,
         user_id: str,
@@ -57,7 +57,7 @@ class QdrantIndexer:
         # Parse
         logging.info("Initiating PDF Parsing...")
         start_time=time()
-        documents = self.parser.parse_pdf(file_path)
+        documents = await self.parser.parse_pdf(file_path)
         end_time=time()
         logging.info(f"Parsing Completed in {(end_time-start_time):2f}seconds")
         if not documents:
@@ -77,7 +77,7 @@ class QdrantIndexer:
         # Embed
         logging.info("Initiating chunks embedding process...")
         start_time=time()
-        embeddings = self.embedder.embed_documents(chunks)
+        embeddings = await self.embedder.embed_documents(chunks)
         end_time=time()
         logging.info(f"Embeddings generated in {(end_time-start_time):.2f}seconds")
 
@@ -86,6 +86,7 @@ class QdrantIndexer:
             raise RuntimeError("Mismatch between chunks and embeddings count.")
 
         logging.info("Preparing Qdrant for Indexing...")
+        start_time=time()
         # Prepare Qdrant points
         points: List[PointStruct] = []
 
@@ -132,8 +133,9 @@ class QdrantIndexer:
             "total_chunks": len(chunks),
             "indexed_chunks": len(points)
         }
-
-        logging.info(f"Indexing complete: {result}")
+        end_time=time()
+        logging.info(f"Indexing completed in {(end_time-start_time):.2f}seconds")
+        logging.info(f"Indexing result: {result}")
 
         return result
 
@@ -165,7 +167,8 @@ class QdrantIndexer:
 
 # Example usage:
 if __name__=="__main__":
+    import asyncio
     indexer=QdrantIndexer()
-    result=indexer.index_pdf(file_path="tmp/83577772-b923-4c40-891d-2edd3fe26fad_Startup India Kit_v5.pdf", user_id="1")
+    result=asyncio.run(indexer.index_pdf(file_path="tmp/83577772-b923-4c40-891d-2edd3fe26fad_Startup India Kit_v5.pdf", user_id="1"))
     
     
