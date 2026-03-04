@@ -92,7 +92,7 @@ async def synthesize_stream(
             chunk_n = 0
             async for message in tts_ws:
 
-                # ── Barge-in check — abort immediately ────────────────────
+                # Barge-in check — abort immediately 
                 if cancel_event.is_set():
                     logging.info("[TTS] Barge-in — aborting TTS stream.")
                     return

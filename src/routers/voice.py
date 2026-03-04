@@ -1,17 +1,7 @@
 # ===================================================================================
 # Project: VoiceRAG
-# File: src/routers/voice_ws.py
+# File: src/routers/voice.py
 # Description: FastAPI WebSocket endpoint for real-time voice pipeline.
-#              Thin router — all business logic lives in src/services/voice/.
-#
-#              Responsibilities here only:
-#                - Accept the WebSocket connection
-#                - Run the browser-receive loop (PCM → queue, stop signal)
-#                - Run ASRSession (delegates to asr_handler.py)
-#                - On ASR events: fire barge-in or launch pipeline task
-#                  (delegates to pipeline.py)
-#                - Clean shutdown on disconnect / stop signal
-#
 # Author: LALAN KUMAR
 # Created: [05-03-2026]
 # Updated: [05-03-2026]
@@ -36,8 +26,7 @@ router = APIRouter(tags=["voice_ws"])
 SARVAM_API_KEY = os.getenv("SARVAM_API_KEY", "")
 
 
-# ── WebSocket frame helper ────────────────────────────────────────────────────
-
+# WebSocket frame helper 
 async def _send(ws: WebSocket, **kwargs) -> None:
     try:
         await ws.send_text(json.dumps(kwargs))
@@ -45,10 +34,8 @@ async def _send(ws: WebSocket, **kwargs) -> None:
         pass
 
 
-# ═════════════════════════════════════════════════════════════════════════════
-#  WebSocket endpoint
-# ═════════════════════════════════════════════════════════════════════════════
 
+#  WebSocket endpoint
 @router.websocket("/ws/voice")
 async def voice_websocket(
     ws:         WebSocket,
@@ -86,19 +73,19 @@ async def voice_websocket(
 
     await _send(ws, type="ready")
 
-    # ── Shared state ──────────────────────────────────────────────────────
+    # Shared state 
     audio_queue:   asyncio.Queue[bytes | None] = asyncio.Queue(maxsize=512)
     cancel_event:  asyncio.Event               = asyncio.Event()
     pipeline_task: asyncio.Task | None         = None
 
-    # ── ASR event callback ────────────────────────────────────────────────
+    # ASR event callback 
     # Called by ASRSession for every speech_start / speech_end / transcript.
     # This is the only place barge-in logic lives in the router.
     async def on_asr_event(event: ASREvent) -> None:
         nonlocal pipeline_task, cancel_event
 
         if event.type == ASREventType.SPEECH_START:
-            # ── Barge-in: cancel running pipeline immediately ─────────────
+            # Barge-in: cancel running pipeline immediately 
             if pipeline_task and not pipeline_task.done():
                 logging.info("[WS] Barge-in — cancelling pipeline.")
                 cancel_event.set()
@@ -142,7 +129,7 @@ async def voice_websocket(
                 )
             )
 
-    # ── Browser receive loop ──────────────────────────────────────────────
+    # Browser receive loop 
     async def receive_browser_loop() -> None:
         chunks_received = 0
         try:
@@ -174,7 +161,7 @@ async def voice_websocket(
             logging.error(f"[WS] Receive error: {exc}")
             await audio_queue.put(None)
 
-    # ── Run ASR session + browser loop concurrently ───────────────────────
+    # Run ASR session + browser loop concurrently 
     asr_task     = asyncio.create_task(
         ASRSession().run(audio_queue, on_asr_event)
     )

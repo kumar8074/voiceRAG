@@ -79,11 +79,11 @@ class QdrantConfig(BaseSettings):
     
 class PostgresConfig(BaseSettings):
     """Postgres Configuration"""
-    postgres_host: str = Field(default="localhost")
-    postgres_port: int = Field(default=5433)
-    postgres_db: str = Field(default="voicerag_db")
-    postgres_user: str = Field(default="voicerag_user")
-    postgres_password: str = Field(default="voicerag")
+    host: str = Field(default="localhost")
+    port: int = Field(default=5432)
+    db: str = Field(default="voicerag_db")
+    user: str = Field(default="voicerag_user")
+    password: str = Field(default="voicerag")
     
     model_config=SettingsConfigDict(
         env_prefix="POSTGRES_",
@@ -123,8 +123,8 @@ QDRANT_COLLECTION_NAME=qdrant_config.collection_name
 QDRANT_GRPC_PORT=qdrant_config.grpc_port
 QDRANT_PREFER_GRPC=qdrant_config.prefer_grpc
 QDRANT_TIMEOUT=qdrant_config.timeout
-POSTGRES_HOST=postgres_config.postgres_host
-POSTGRES_PORT=postgres_config.postgres_port
-POSTGRES_DB=postgres_config.postgres_db
-POSTGRES_USER=postgres_config.postgres_user
-POSTGRES_PASSWORD=postgres_config.postgres_password
+POSTGRES_HOST=postgres_config.host
+POSTGRES_PORT=postgres_config.port
+POSTGRES_DB=postgres_config.db
+POSTGRES_USER=postgres_config.user
+POSTGRES_PASSWORD=postgres_config.password

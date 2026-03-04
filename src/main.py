@@ -1,6 +1,6 @@
 # ===================================================================================
 # Project: VoiceRAG
-# File: main.py
+# File: src/main.py
 # Description: FastAPI application entry point
 # Author: LALAN KUMAR
 # Created: [02-03-2026]
@@ -17,12 +17,12 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 
-from src.db.init_db import init_db
-from src.dependencies import get_qdrant_client, get_embedding_service
-from src.routers.file_upload import router as file_upload_router
-from src.routers.chat import router as chat_router
-from src.routers.voice import router as voice_ws_router 
-from src.logger import logging
+from .db.init_db import init_db
+from .dependencies import get_qdrant_client, get_embedding_service
+from .routers.file_upload import router as file_upload_router
+from .routers.chat import router as chat_router
+from .routers.voice import router as voice_ws_router 
+from .logger import logging
 
 
 @asynccontextmanager

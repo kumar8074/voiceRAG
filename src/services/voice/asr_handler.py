@@ -2,14 +2,6 @@
 # Project: VoiceRAG
 # File: src/services/voice/asr_handler.py
 # Description: Sarvam Saaras v3 streaming ASR WebSocket session.
-#
-#              Key fixes vs previous version:
-#              1. mode="transcribe" not "codemix" — v3 STT needs explicit language
-#              2. sample_rate passed in BOTH connect() AND each transcribe() call
-#                 (Sarvam requires both to match — mismatch = silent VAD)
-#              3. Language detected via Unicode script, not ASR response field
-#                 (saaras:v3 STT does not return language_code in transcript events)
-#
 # Author: LALAN KUMAR
 # Created: [05-03-2026]
 # Updated: [05-03-2026]
@@ -30,7 +22,7 @@ from sarvamai import AsyncSarvamAI
 from ...logger import logging
 from .audio_utils import pcm_to_base64, detect_language
 
-# ── Constants ─────────────────────────────────────────────────────────────────
+# Constants 
 
 SARVAM_API_KEY  = os.getenv("SARVAM_API_KEY", "")
 ASR_MODEL       = "saaras:v3"
@@ -49,8 +41,7 @@ ASR_LANGUAGE    = "hi-IN"
 ASR_CODEC       = "pcm_s16le"  # raw signed-16-bit little-endian PCM
 
 
-# ── Event types ───────────────────────────────────────────────────────────────
-
+# Event types 
 class ASREventType(Enum):
     SPEECH_START = auto()
     SPEECH_END   = auto()
@@ -63,8 +54,6 @@ class ASREvent:
     transcript:    str = ""
     language_code: str = "en-IN"   # always hi-IN or en-IN, set by detect_language()
 
-
-# ── ASR Session ───────────────────────────────────────────────────────────────
 
 class ASRSession:
     """
@@ -131,8 +120,7 @@ class ASRSession:
                 recv_task.cancel()
                 logging.info("[ASR] Session closed.")
 
-    # ── Send loop ─────────────────────────────────────────────────────────────
-
+    # Send loop
     @staticmethod
     async def _send_loop(asr_ws, audio_queue: asyncio.Queue) -> None:
         """
@@ -177,8 +165,7 @@ class ASRSession:
                 sample_rate=ASR_SAMPLE_RATE,   # ← MUST match connection sample_rate
             )
 
-    # ── Receive loop ──────────────────────────────────────────────────────────
-
+    # Receive loop 
     @staticmethod
     async def _recv_loop(
         asr_ws,
