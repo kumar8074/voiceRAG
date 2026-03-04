@@ -14,18 +14,9 @@ from time import time
 
 from qdrant_client.models import Filter, FieldCondition, MatchValue
 
-from ...config import (
-    QDRANT_HOST,
-    QDRANT_PORT,
-    QDRANT_GRPC_PORT,
-    QDRANT_PREFER_GRPC,
-    QDRANT_TIMEOUT,
-    QDRANT_COLLECTION_NAME
-)
+from ...config import QDRANT_COLLECTION_NAME
 from ...logger import logging
-
-from ..embedding.embedding_service import EmbeddingService
-from ..qdrant.factory import QdrantFactory
+from ...dependencies import get_qdrant_client, get_embedding_service
 
 
 class SearchService:
@@ -38,15 +29,9 @@ class SearchService:
     """
 
     def __init__(self):
-        self.embedder = EmbeddingService()
+        self.embedder = get_embedding_service()
 
-        self.client, _ = QdrantFactory.connect(
-            host=QDRANT_HOST,
-            port=QDRANT_PORT,
-            grpc_port=QDRANT_GRPC_PORT,
-            prefer_grpc=QDRANT_PREFER_GRPC,
-            timeout=QDRANT_TIMEOUT
-        )
+        self.client = get_qdrant_client()
 
     def search(
         self,

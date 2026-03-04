@@ -17,20 +17,12 @@ from time import time
 from qdrant_client.models import PointStruct
 from qdrant_client.models import Filter, FieldCondition, MatchValue
 
-from ...config import (
-    QDRANT_HOST,
-    QDRANT_PORT,
-    QDRANT_GRPC_PORT,
-    QDRANT_PREFER_GRPC,
-    QDRANT_TIMEOUT,
-    QDRANT_COLLECTION_NAME
-)
-
 from ..pdf_parser.parser import PDFParser
 from ..chunker.text_chunker import TextChunker
-from ..embedding.embedding_service import EmbeddingService
-from ..qdrant.factory import QdrantFactory
+
 from ...logger import logging
+from ...dependencies import get_qdrant_client, get_embedding_service
+from ...config import QDRANT_COLLECTION_NAME
 
 class QdrantIndexer:
     """
@@ -43,18 +35,9 @@ class QdrantIndexer:
     def __init__(self):
         self.parser = PDFParser()
         self.chunker = TextChunker()
-        self.embedder = EmbeddingService()
+        self.embedder = get_embedding_service()
 
-        self.client, _ = QdrantFactory.connect(
-            host=QDRANT_HOST,
-            port=QDRANT_PORT,
-            grpc_port=QDRANT_GRPC_PORT,
-            prefer_grpc=QDRANT_PREFER_GRPC,
-            timeout=QDRANT_TIMEOUT
-        )
-
-        # Ensure collection exists
-        QdrantFactory.ensure_collection(self.client)
+        self.client = get_qdrant_client()
 
     def index_pdf(
         self,
