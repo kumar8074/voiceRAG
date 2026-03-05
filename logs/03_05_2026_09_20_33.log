@@ -1,0 +1,232 @@
+[ 2026-03-05 09:20:37,525 ] 45 root - INFO - Connecting to Qdrant...
+[ 2026-03-05 09:20:37,562 ] 1025 httpx - INFO - HTTP Request: GET http://qdrant:6333 "HTTP/1.1 200 OK"
+[ 2026-03-05 09:20:37,574 ] 1025 httpx - INFO - HTTP Request: GET http://qdrant:6333/collections "HTTP/1.1 200 OK"
+[ 2026-03-05 09:20:37,580 ] 59 root - INFO - Qdrant connection established successfully.
+[ 2026-03-05 09:20:37,581 ] 1025 httpx - INFO - HTTP Request: GET http://qdrant:6333/collections "HTTP/1.1 200 OK"
+[ 2026-03-05 09:20:37,581 ] 83 root - INFO - Creating collection: rag-collection
+[ 2026-03-05 09:20:37,652 ] 1025 httpx - INFO - HTTP Request: PUT http://qdrant:6333/collections/rag-collection "HTTP/1.1 200 OK"
+[ 2026-03-05 09:20:37,654 ] 90 root - INFO - Collection created successfully: rag-collection
+[ 2026-03-05 09:20:37,685 ] 33 root - INFO - Starting VoiceRAG...
+[ 2026-03-05 09:20:37,776 ] 37 root - INFO - DB tables ready.
+[ 2026-03-05 09:20:37,776 ] 41 root - INFO - Qdrant client ready.
+[ 2026-03-05 09:20:37,776 ] 44 root - INFO - Embedding service ready.
+[ 2026-03-05 09:21:46,031 ] 43 root - INFO - Chat request: user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d, session=92a602ef-9c59-405f-9bc2-e8557da5241b
+[ 2026-03-05 09:21:46,507 ] 1740 httpx - INFO - HTTP Request: POST https://api.sarvam.ai/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-03-05 09:21:46,592 ] 105 root - INFO - Intent resolved by LLM classifier → '0' for: 'Hello ji'
+[ 2026-03-05 09:21:46,593 ] 142 root - INFO - Intent: general — query: 'Hello ji'
+[ 2026-03-05 09:21:47,005 ] 1740 httpx - INFO - HTTP Request: POST https://api.sarvam.ai/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-03-05 09:21:47,063 ] 39 root - INFO - Message saved: user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d, session=92a602ef-9c59-405f-9bc2-e8557da5241b, role=user
+[ 2026-03-05 09:21:47,064 ] 39 root - INFO - Message saved: user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d, session=92a602ef-9c59-405f-9bc2-e8557da5241b, role=assistant
+[ 2026-03-05 09:21:47,066 ] 246 root - INFO - Turn persisted: user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d, session=92a602ef-9c59-405f-9bc2-e8557da5241b
+[ 2026-03-05 09:22:16,944 ] 117 root - INFO - Upload complete, indexing job 23a28ef7-a079-472e-b7c7-1acbd514b07b started for user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d
+[ 2026-03-05 09:22:16,947 ] 74 root - INFO - [DocIntelIndexer] Starting concurrent Sarvam DI for 1 file(s), user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d
+[ 2026-03-05 09:22:16,970 ] 73 root - INFO - [DocIntel] Creating job for: tmp/84363086-597f-4085-b0e7-f21b88b7033d_cover-letter.pdf
+[ 2026-03-05 09:22:17,234 ] 1025 httpx - INFO - HTTP Request: POST https://api.sarvam.ai/doc-digitization/job/v1 "HTTP/1.1 202 Accepted"
+[ 2026-03-05 09:22:17,240 ] 79 root - INFO - [DocIntel] Uploading file: tmp/84363086-597f-4085-b0e7-f21b88b7033d_cover-letter.pdf
+[ 2026-03-05 09:22:17,314 ] 1025 httpx - INFO - HTTP Request: POST https://api.sarvam.ai/doc-digitization/job/v1/upload-files "HTTP/1.1 200 OK"
+[ 2026-03-05 09:22:17,620 ] 1025 httpx - INFO - HTTP Request: PUT https://appsprodaksharpublicsa.blob.core.windows.net/bulk-upload-storage/jobs/2026-03-05/PARSE_PDF_BULK/e094a291-027f-4ebb-9be1-7abfaf1c32a7/inputs/84363086-597f-4085-b0e7-f21b88b7033d_cover-letter.pdf?se=2026-03-05T10%3A22%3A17Z&sp=w&sv=2026-02-06&sr=b&sig=B7CuIvCflhsXuxAjQEds8DjCwzDczAEaiGwiHyTCpHo%3D "HTTP/1.1 201 Created"
+[ 2026-03-05 09:22:17,620 ] 82 root - INFO - [DocIntel] Starting job...
+[ 2026-03-05 09:22:17,735 ] 1025 httpx - INFO - HTTP Request: POST https://api.sarvam.ai/doc-digitization/job/v1/20260305_e094a291-027f-4ebb-9be1-7abfaf1c32a7/start "HTTP/1.1 202 Accepted"
+[ 2026-03-05 09:22:17,738 ] 86 root - INFO - [DocIntel] Waiting for completion...
+[ 2026-03-05 09:22:17,830 ] 1025 httpx - INFO - HTTP Request: GET https://api.sarvam.ai/doc-digitization/job/v1/20260305_e094a291-027f-4ebb-9be1-7abfaf1c32a7/status "HTTP/1.1 200 OK"
+[ 2026-03-05 09:22:20,043 ] 1025 httpx - INFO - HTTP Request: GET https://api.sarvam.ai/doc-digitization/job/v1/20260305_e094a291-027f-4ebb-9be1-7abfaf1c32a7/status "HTTP/1.1 200 OK"
+[ 2026-03-05 09:22:22,170 ] 1025 httpx - INFO - HTTP Request: GET https://api.sarvam.ai/doc-digitization/job/v1/20260305_e094a291-027f-4ebb-9be1-7abfaf1c32a7/status "HTTP/1.1 200 OK"
+[ 2026-03-05 09:22:22,175 ] 89 root - INFO - [DocIntel] Job finished with state: Completed, After: 4.55s
+[ 2026-03-05 09:22:22,273 ] 1025 httpx - INFO - HTTP Request: POST https://api.sarvam.ai/doc-digitization/job/v1/20260305_e094a291-027f-4ebb-9be1-7abfaf1c32a7/download-files "HTTP/1.1 200 OK"
+[ 2026-03-05 09:22:22,442 ] 1025 httpx - INFO - HTTP Request: GET https://appsprodaksharpublicsa.blob.core.windows.net/bulk-upload-storage/jobs/2026-03-05/PARSE_PDF_BULK/e094a291-027f-4ebb-9be1-7abfaf1c32a7/outputs/document.zip?se=2026-03-05T10%3A22%3A22Z&sp=r&sv=2026-02-06&sr=b&sig=ppQ84VkcbowhUwf9pcJukhp8U89Doj4MURmb5VS7LHU%3D "HTTP/1.1 200 OK"
+[ 2026-03-05 09:22:22,458 ] 133 root - INFO - [DocIntel] Extracted 1 .md file(s), 1634 total chars.
+[ 2026-03-05 09:22:22,458 ] 86 root - INFO - [DocIntelIndexer] Sarvam DI completed for all 1 file(s) in 5.51s
+[ 2026-03-05 09:22:22,459 ] 145 root - INFO - [DocIntelIndexer] Chunking: 84363086-597f-4085-b0e7-f21b88b7033d_cover-letter.pdf
+[ 2026-03-05 09:22:22,459 ] 105 root - INFO - [MdChunker] 1 logical section(s) identified.
+[ 2026-03-05 09:22:22,461 ] 121 root - INFO - [MdChunker] Produced 4 chunk(s) from 1 section(s).
+[ 2026-03-05 09:22:22,462 ] 140 root - INFO - [MdChunker] 4 chunk(s) after junk filtering
+[ 2026-03-05 09:22:22,462 ] 156 root - INFO - [DocIntelIndexer] 4 chunk(s) in 0.00s
+[ 2026-03-05 09:22:22,462 ] 165 root - INFO - [DocIntelIndexer] Embedding 4 chunk(s)...
+[ 2026-03-05 09:22:22,462 ] 67 root - INFO - Scheduling batch 1 (4 documents)
+[ 2026-03-05 09:22:22,798 ] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/intfloat/multilingual-e5-large "HTTP/1.1 200 OK"
+[ 2026-03-05 09:22:28,370 ] 1740 httpx - INFO - HTTP Request: POST https://router.huggingface.co/hf-inference/models/intfloat/multilingual-e5-large/pipeline/feature-extraction "HTTP/1.1 200 OK"
+[ 2026-03-05 09:22:28,400 ] 168 root - INFO - [DocIntelIndexer] Embeddings done in 5.94s
+[ 2026-03-05 09:22:28,401 ] 198 root - INFO - [DocIntelIndexer] Upserting 4 point(s) to Qdrant...
+[ 2026-03-05 09:22:28,444 ] 1025 httpx - INFO - HTTP Request: PUT http://qdrant:6333/collections/rag-collection/points?wait=true "HTTP/1.1 200 OK"
+[ 2026-03-05 09:22:28,450 ] 206 root - INFO - [DocIntelIndexer] Upsert complete in 0.05s
+[ 2026-03-05 09:22:28,451 ] 216 root - INFO - [DocIntelIndexer] Indexed: {'doc_id': '2e72d73a-2968-40ca-b683-f398e907c353', 'filename': '84363086-597f-4085-b0e7-f21b88b7033d_cover-letter.pdf', 'total_chunks': 4, 'indexed_chunks': 4}
+[ 2026-03-05 09:22:28,451 ] 103 root - INFO - [DocIntelIndexer] All files indexed. Total chunks: 4
+[ 2026-03-05 09:22:28,451 ] 61 root - INFO - Job 23a28ef7-a079-472e-b7c7-1acbd514b07b complete: [{'doc_id': '2e72d73a-2968-40ca-b683-f398e907c353', 'filename': '84363086-597f-4085-b0e7-f21b88b7033d_cover-letter.pdf'}]
+[ 2026-03-05 09:22:41,788 ] 43 root - INFO - Chat request: user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d, session=92a602ef-9c59-405f-9bc2-e8557da5241b
+[ 2026-03-05 09:22:42,105 ] 1740 httpx - INFO - HTTP Request: POST https://api.sarvam.ai/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-03-05 09:22:42,141 ] 105 root - INFO - Intent resolved by LLM classifier → '1' for: 'what this doc is about?'
+[ 2026-03-05 09:22:42,141 ] 142 root - INFO - Intent: document — query: 'what this doc is about?'
+[ 2026-03-05 09:22:42,141 ] 196 root - INFO - Fetching history and search results in parallel...
+[ 2026-03-05 09:22:42,148 ] 59 root - INFO - Initiating query embedding...
+[ 2026-03-05 09:22:42,163 ] 68 root - INFO - Fetched 2 history messages for user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d, session=92a602ef-9c59-405f-9bc2-e8557da5241b
+[ 2026-03-05 09:22:42,543 ] 1740 httpx - INFO - HTTP Request: POST https://router.huggingface.co/hf-inference/models/intfloat/multilingual-e5-large/pipeline/feature-extraction "HTTP/1.1 200 OK"
+[ 2026-03-05 09:22:42,547 ] 63 root - INFO - Query Embedding sucessful in 0.40seconds
+[ 2026-03-05 09:22:42,547 ] 66 root - INFO - Building user filter...
+[ 2026-03-05 09:22:42,548 ] 76 root - INFO - Initiating search...
+[ 2026-03-05 09:22:42,582 ] 1025 httpx - INFO - HTTP Request: POST http://qdrant:6333/collections/rag-collection/points/query "HTTP/1.1 200 OK"
+[ 2026-03-05 09:22:42,587 ] 86 root - INFO - Formatting Result...
+[ 2026-03-05 09:22:42,587 ] 98 root - INFO - Search completed in 0.04seconds
+[ 2026-03-05 09:22:42,587 ] 99 root - INFO - Search Results:[{'score': 0.7857714, 'chunk_id': '2e72d73a-2968-40ca-b683-f398e907c353_1', 'doc_id': '2e72d73a-2968-40ca-b683-f398e907c353', 'content': 'I’ve built and deployed AI workflows leveraging LLMs, embeddings, and RAG architectures,\noptimized inference pipelines, and contributed open-source tools focused on practical AI\nengineering. I also have a research paper approved for publication in the Journal of Earth\nSystem Science, reflecting my ability to combine rigorous research thinking with applied\nengineering.', 'language': None, 'chunk_index': 1}, {'score': 0.78515565, 'chunk_id': '2e72d73a-2968-40ca-b683-f398e907c353_3', 'doc_id': '2e72d73a-2968-40ca-b683-f398e907c353', 'content': 'Thank you for your time and consideration.\n\nBest regards,\nLalan Kumar', 'language': None, 'chunk_index': 3}, {'score': 0.78289384, 'chunk_id': '2e72d73a-2968-40ca-b683-f398e907c353_0', 'doc_id': '2e72d73a-2968-40ca-b683-f398e907c353', 'content': '## Dear Hiring Team,\n\nI’m an AI Engineer working on real-world AI systems including agent-based workflows,\nretrieval-augmented pipelines, and full production deployments. My work spans\nPython-based development, system design, and shipping AI applications end-to-end with\nreliable CI/CD, monitoring, and scalable infrastructure. I focus on building systems that move\nbeyond proofs-of-concept into maintainable, production-grade solutions.', 'language': None, 'chunk_index': 0}, {'score': 0.7744036, 'chunk_id': '2e72d73a-2968-40ca-b683-f398e907c353_2', 'doc_id': '2e72d73a-2968-40ca-b683-f398e907c353', 'content': 'Given NORDEN’s focus on enabling data-driven decision-making in a competitive chartering\nenvironment, I see strong alignment with the kind of applied, production-focused AI work I do\nespecially in translating business needs into reliable AI tools that deliver measurable impact.\nThe emphasis on building in-house data products, establishing GenAI best practices, and\nworking across the full AI lifecycle resonates strongly with my approach to engineering.\n\nI’m particularly drawn to the engineering culture described as clean code, experimentation,\ncollaboration, and shipping real products rather than demos. That environment aligns closely\nwith how I prefer to work and grow.\n\nI’ve attached my resume, and here’s my GitHub profile for your reference.\n\nThank you for your time and consideration.', 'language': None, 'chunk_index': 2}]
+[ 2026-03-05 09:22:42,588 ] 210 root - INFO - Parallel fetch done — 2 history turns, 4 chunks
+[ 2026-03-05 09:22:43,568 ] 1740 httpx - INFO - HTTP Request: POST https://api.sarvam.ai/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-03-05 09:22:44,297 ] 39 root - INFO - Message saved: user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d, session=92a602ef-9c59-405f-9bc2-e8557da5241b, role=user
+[ 2026-03-05 09:22:44,300 ] 39 root - INFO - Message saved: user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d, session=92a602ef-9c59-405f-9bc2-e8557da5241b, role=assistant
+[ 2026-03-05 09:22:44,303 ] 246 root - INFO - Turn persisted: user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d, session=92a602ef-9c59-405f-9bc2-e8557da5241b
+[ 2026-03-05 09:23:18,338 ] 117 root - INFO - Upload complete, indexing job 4a1e2a87-523f-4d20-bcac-2af3323c9d30 started for user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d
+[ 2026-03-05 09:23:18,340 ] 74 root - INFO - [DocIntelIndexer] Starting concurrent Sarvam DI for 1 file(s), user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d
+[ 2026-03-05 09:23:18,360 ] 73 root - INFO - [DocIntel] Creating job for: tmp/7f9e577f-9fcd-4528-9bb3-101b9a4ab59d_Springer_Nature_LaTeX_Template.pdf
+[ 2026-03-05 09:23:18,578 ] 1025 httpx - INFO - HTTP Request: POST https://api.sarvam.ai/doc-digitization/job/v1 "HTTP/1.1 202 Accepted"
+[ 2026-03-05 09:23:18,583 ] 79 root - INFO - [DocIntel] Uploading file: tmp/7f9e577f-9fcd-4528-9bb3-101b9a4ab59d_Springer_Nature_LaTeX_Template.pdf
+[ 2026-03-05 09:23:18,672 ] 1025 httpx - INFO - HTTP Request: POST https://api.sarvam.ai/doc-digitization/job/v1/upload-files "HTTP/1.1 200 OK"
+[ 2026-03-05 09:23:19,047 ] 1025 httpx - INFO - HTTP Request: PUT https://appsprodaksharpublicsa.blob.core.windows.net/bulk-upload-storage/jobs/2026-03-05/PARSE_PDF_BULK/63496aa9-7ee9-434d-8dc2-601427f51c46/inputs/7f9e577f-9fcd-4528-9bb3-101b9a4ab59d_Springer_Nature_LaTeX_Template.pdf?se=2026-03-05T10%3A23%3A18Z&sp=w&sv=2026-02-06&sr=b&sig=NnPLVph%2BojbEJxQWv/JtGO1/pKR9MjlU5RakdiAv9pY%3D "HTTP/1.1 201 Created"
+[ 2026-03-05 09:23:19,049 ] 82 root - INFO - [DocIntel] Starting job...
+[ 2026-03-05 09:23:19,197 ] 1025 httpx - INFO - HTTP Request: POST https://api.sarvam.ai/doc-digitization/job/v1/20260305_63496aa9-7ee9-434d-8dc2-601427f51c46/start "HTTP/1.1 202 Accepted"
+[ 2026-03-05 09:23:19,199 ] 86 root - INFO - [DocIntel] Waiting for completion...
+[ 2026-03-05 09:23:19,258 ] 1025 httpx - INFO - HTTP Request: GET https://api.sarvam.ai/doc-digitization/job/v1/20260305_63496aa9-7ee9-434d-8dc2-601427f51c46/status "HTTP/1.1 200 OK"
+[ 2026-03-05 09:23:21,329 ] 1025 httpx - INFO - HTTP Request: GET https://api.sarvam.ai/doc-digitization/job/v1/20260305_63496aa9-7ee9-434d-8dc2-601427f51c46/status "HTTP/1.1 200 OK"
+[ 2026-03-05 09:23:23,397 ] 1025 httpx - INFO - HTTP Request: GET https://api.sarvam.ai/doc-digitization/job/v1/20260305_63496aa9-7ee9-434d-8dc2-601427f51c46/status "HTTP/1.1 200 OK"
+[ 2026-03-05 09:23:25,488 ] 1025 httpx - INFO - HTTP Request: GET https://api.sarvam.ai/doc-digitization/job/v1/20260305_63496aa9-7ee9-434d-8dc2-601427f51c46/status "HTTP/1.1 200 OK"
+[ 2026-03-05 09:23:27,595 ] 1025 httpx - INFO - HTTP Request: GET https://api.sarvam.ai/doc-digitization/job/v1/20260305_63496aa9-7ee9-434d-8dc2-601427f51c46/status "HTTP/1.1 200 OK"
+[ 2026-03-05 09:23:29,685 ] 1025 httpx - INFO - HTTP Request: GET https://api.sarvam.ai/doc-digitization/job/v1/20260305_63496aa9-7ee9-434d-8dc2-601427f51c46/status "HTTP/1.1 200 OK"
+[ 2026-03-05 09:23:31,752 ] 1025 httpx - INFO - HTTP Request: GET https://api.sarvam.ai/doc-digitization/job/v1/20260305_63496aa9-7ee9-434d-8dc2-601427f51c46/status "HTTP/1.1 200 OK"
+[ 2026-03-05 09:23:31,756 ] 89 root - INFO - [DocIntel] Job finished with state: Completed, After: 12.71s
+[ 2026-03-05 09:23:31,856 ] 1025 httpx - INFO - HTTP Request: POST https://api.sarvam.ai/doc-digitization/job/v1/20260305_63496aa9-7ee9-434d-8dc2-601427f51c46/download-files "HTTP/1.1 200 OK"
+[ 2026-03-05 09:23:32,506 ] 1025 httpx - INFO - HTTP Request: GET https://appsprodaksharpublicsa.blob.core.windows.net/bulk-upload-storage/jobs/2026-03-05/PARSE_PDF_BULK/63496aa9-7ee9-434d-8dc2-601427f51c46/outputs/document.zip?se=2026-03-05T10%3A23%3A31Z&sp=r&sv=2026-02-06&sr=b&sig=Yw0dcj0wM7zYuET5KQu7WRCU5sqNR00FtJMFKjWJlN0%3D "HTTP/1.1 200 OK"
+[ 2026-03-05 09:23:32,716 ] 133 root - INFO - [DocIntel] Extracted 1 .md file(s), 857505 total chars.
+[ 2026-03-05 09:23:32,717 ] 86 root - INFO - [DocIntelIndexer] Sarvam DI completed for all 1 file(s) in 14.38s
+[ 2026-03-05 09:23:32,717 ] 145 root - INFO - [DocIntelIndexer] Chunking: 7f9e577f-9fcd-4528-9bb3-101b9a4ab59d_Springer_Nature_LaTeX_Template.pdf
+[ 2026-03-05 09:23:32,727 ] 105 root - INFO - [MdChunker] 11 logical section(s) identified.
+[ 2026-03-05 09:23:33,434 ] 121 root - INFO - [MdChunker] Produced 1254 chunk(s) from 11 section(s).
+[ 2026-03-05 09:23:33,495 ] 140 root - INFO - [MdChunker] 70 chunk(s) after junk filtering
+[ 2026-03-05 09:23:33,495 ] 156 root - INFO - [DocIntelIndexer] 70 chunk(s) in 0.78s
+[ 2026-03-05 09:23:33,495 ] 165 root - INFO - [DocIntelIndexer] Embedding 70 chunk(s)...
+[ 2026-03-05 09:23:33,495 ] 67 root - INFO - Scheduling batch 1 (32 documents)
+[ 2026-03-05 09:23:33,495 ] 67 root - INFO - Scheduling batch 2 (32 documents)
+[ 2026-03-05 09:23:33,495 ] 67 root - INFO - Scheduling batch 3 (6 documents)
+[ 2026-03-05 09:23:34,928 ] 1740 httpx - INFO - HTTP Request: POST https://router.huggingface.co/hf-inference/models/intfloat/multilingual-e5-large/pipeline/feature-extraction "HTTP/1.1 200 OK"
+[ 2026-03-05 09:23:50,425 ] 1740 httpx - INFO - HTTP Request: POST https://router.huggingface.co/hf-inference/models/intfloat/multilingual-e5-large/pipeline/feature-extraction "HTTP/1.1 200 OK"
+[ 2026-03-05 09:24:01,155 ] 1740 httpx - INFO - HTTP Request: POST https://router.huggingface.co/hf-inference/models/intfloat/multilingual-e5-large/pipeline/feature-extraction "HTTP/1.1 200 OK"
+[ 2026-03-05 09:24:01,720 ] 168 root - INFO - [DocIntelIndexer] Embeddings done in 28.22s
+[ 2026-03-05 09:24:01,727 ] 198 root - INFO - [DocIntelIndexer] Upserting 70 point(s) to Qdrant...
+[ 2026-03-05 09:24:01,822 ] 1025 httpx - INFO - HTTP Request: PUT http://qdrant:6333/collections/rag-collection/points?wait=true "HTTP/1.1 200 OK"
+[ 2026-03-05 09:24:01,823 ] 206 root - INFO - [DocIntelIndexer] Upsert complete in 0.10s
+[ 2026-03-05 09:24:01,823 ] 216 root - INFO - [DocIntelIndexer] Indexed: {'doc_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464', 'filename': '7f9e577f-9fcd-4528-9bb3-101b9a4ab59d_Springer_Nature_LaTeX_Template.pdf', 'total_chunks': 70, 'indexed_chunks': 70}
+[ 2026-03-05 09:24:01,824 ] 103 root - INFO - [DocIntelIndexer] All files indexed. Total chunks: 70
+[ 2026-03-05 09:24:01,824 ] 61 root - INFO - Job 4a1e2a87-523f-4d20-bcac-2af3323c9d30 complete: [{'doc_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464', 'filename': '7f9e577f-9fcd-4528-9bb3-101b9a4ab59d_Springer_Nature_LaTeX_Template.pdf'}]
+[ 2026-03-05 09:24:16,458 ] 43 root - INFO - Chat request: user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d, session=92a602ef-9c59-405f-9bc2-e8557da5241b
+[ 2026-03-05 09:24:16,812 ] 1740 httpx - INFO - HTTP Request: POST https://api.sarvam.ai/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-03-05 09:24:16,874 ] 105 root - INFO - Intent resolved by LLM classifier → '1' for: 'what the springer do is about?'
+[ 2026-03-05 09:24:16,875 ] 142 root - INFO - Intent: document — query: 'what the springer do is about?'
+[ 2026-03-05 09:24:16,875 ] 196 root - INFO - Fetching history and search results in parallel...
+[ 2026-03-05 09:24:16,881 ] 59 root - INFO - Initiating query embedding...
+[ 2026-03-05 09:24:16,890 ] 68 root - INFO - Fetched 4 history messages for user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d, session=92a602ef-9c59-405f-9bc2-e8557da5241b
+[ 2026-03-05 09:24:17,325 ] 1740 httpx - INFO - HTTP Request: POST https://router.huggingface.co/hf-inference/models/intfloat/multilingual-e5-large/pipeline/feature-extraction "HTTP/1.1 200 OK"
+[ 2026-03-05 09:24:17,331 ] 63 root - INFO - Query Embedding sucessful in 0.45seconds
+[ 2026-03-05 09:24:17,331 ] 66 root - INFO - Building user filter...
+[ 2026-03-05 09:24:17,332 ] 76 root - INFO - Initiating search...
+[ 2026-03-05 09:24:17,360 ] 1025 httpx - INFO - HTTP Request: POST http://qdrant:6333/collections/rag-collection/points/query "HTTP/1.1 200 OK"
+[ 2026-03-05 09:24:17,363 ] 86 root - INFO - Formatting Result...
+[ 2026-03-05 09:24:17,363 ] 98 root - INFO - Search completed in 0.03seconds
+[ 2026-03-05 09:24:17,363 ] 99 root - INFO - Search Results:[{'score': 0.7668457, 'chunk_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464_3', 'doc_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464', 'content': '**Keywords:** Hyperspectral Image Classification, Deep Autoencoder, Spectral-Spatial\nFeatures, Optimizer Evaluation\n\n1\n\n---', 'language': None, 'chunk_index': 3}, {'score': 0.7628217, 'chunk_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464_21', 'doc_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464', 'content': 'spectral images. Table 1 shows the comparative study of some published articles related\nto autoencoder-based hyperspetral image classification techniques.', 'language': None, 'chunk_index': 21}, {'score': 0.7595732, 'chunk_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464_39', 'doc_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464', 'content': 'Parallel to the reconstruction path, the classifier module branches from the latent\nspace and further processes the encoded features using deep convolutional layers, fol-\nlowed by a global average pooling operation and fully connected dense layers. The\n\n8\n\n---', 'language': None, 'chunk_index': 39}, {'score': 0.7587669, 'chunk_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464_52', 'doc_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464', 'content': '*The image presents two side-by-side visualizations of a spatial dataset, likely representing a map or a 2D occupancy grid, set against a black background. There are no X or Y axes, labels, units, or legends provided to define the spatial coordinates or the meaning of the colors.', 'language': None, 'chunk_index': 52}, {'score': 0.75773954, 'chunk_id': '2e72d73a-2968-40ca-b683-f398e907c353_0', 'doc_id': '2e72d73a-2968-40ca-b683-f398e907c353', 'content': '## Dear Hiring Team,\n\nI’m an AI Engineer working on real-world AI systems including agent-based workflows,\nretrieval-augmented pipelines, and full production deployments. My work spans\nPython-based development, system design, and shipping AI applications end-to-end with\nreliable CI/CD, monitoring, and scalable infrastructure. I focus on building systems that move\nbeyond proofs-of-concept into maintainable, production-grade solutions.', 'language': None, 'chunk_index': 0}]
+[ 2026-03-05 09:24:17,363 ] 210 root - INFO - Parallel fetch done — 4 history turns, 5 chunks
+[ 2026-03-05 09:24:17,959 ] 1740 httpx - INFO - HTTP Request: POST https://api.sarvam.ai/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-03-05 09:24:18,746 ] 39 root - INFO - Message saved: user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d, session=92a602ef-9c59-405f-9bc2-e8557da5241b, role=user
+[ 2026-03-05 09:24:18,747 ] 39 root - INFO - Message saved: user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d, session=92a602ef-9c59-405f-9bc2-e8557da5241b, role=assistant
+[ 2026-03-05 09:24:18,750 ] 246 root - INFO - Turn persisted: user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d, session=92a602ef-9c59-405f-9bc2-e8557da5241b
+[ 2026-03-05 09:24:55,314 ] 43 root - INFO - Chat request: user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d, session=92a602ef-9c59-405f-9bc2-e8557da5241b
+[ 2026-03-05 09:24:55,646 ] 1740 httpx - INFO - HTTP Request: POST https://api.sarvam.ai/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-03-05 09:24:55,700 ] 105 root - INFO - Intent resolved by LLM classifier → '1' for: 'can you tell me more about approach used in the reasearch?'
+[ 2026-03-05 09:24:55,700 ] 142 root - INFO - Intent: document — query: 'can you tell me more about approach used in the reasearch?'
+[ 2026-03-05 09:24:55,700 ] 196 root - INFO - Fetching history and search results in parallel...
+[ 2026-03-05 09:24:55,707 ] 59 root - INFO - Initiating query embedding...
+[ 2026-03-05 09:24:55,717 ] 68 root - INFO - Fetched 6 history messages for user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d, session=92a602ef-9c59-405f-9bc2-e8557da5241b
+[ 2026-03-05 09:24:56,167 ] 1740 httpx - INFO - HTTP Request: POST https://router.huggingface.co/hf-inference/models/intfloat/multilingual-e5-large/pipeline/feature-extraction "HTTP/1.1 200 OK"
+[ 2026-03-05 09:24:56,173 ] 63 root - INFO - Query Embedding sucessful in 0.46seconds
+[ 2026-03-05 09:24:56,173 ] 66 root - INFO - Building user filter...
+[ 2026-03-05 09:24:56,173 ] 76 root - INFO - Initiating search...
+[ 2026-03-05 09:24:56,191 ] 1025 httpx - INFO - HTTP Request: POST http://qdrant:6333/collections/rag-collection/points/query "HTTP/1.1 200 OK"
+[ 2026-03-05 09:24:56,193 ] 86 root - INFO - Formatting Result...
+[ 2026-03-05 09:24:56,193 ] 98 root - INFO - Search completed in 0.02seconds
+[ 2026-03-05 09:24:56,193 ] 99 root - INFO - Search Results:[{'score': 0.82390404, 'chunk_id': '2e72d73a-2968-40ca-b683-f398e907c353_1', 'doc_id': '2e72d73a-2968-40ca-b683-f398e907c353', 'content': 'I’ve built and deployed AI workflows leveraging LLMs, embeddings, and RAG architectures,\noptimized inference pipelines, and contributed open-source tools focused on practical AI\nengineering. I also have a research paper approved for publication in the Journal of Earth\nSystem Science, reflecting my ability to combine rigorous research thinking with applied\nengineering.', 'language': None, 'chunk_index': 1}, {'score': 0.820239, 'chunk_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464_56', 'doc_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464', 'content': '*Table 4: Comparison of Best Accuracies Between Previous Studies\nand Our Experiment*', 'language': None, 'chunk_index': 56}, {'score': 0.81584644, 'chunk_id': '2e72d73a-2968-40ca-b683-f398e907c353_3', 'doc_id': '2e72d73a-2968-40ca-b683-f398e907c353', 'content': 'Thank you for your time and consideration.\n\nBest regards,\nLalan Kumar', 'language': None, 'chunk_index': 3}, {'score': 0.81466377, 'chunk_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464_9', 'doc_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464', 'content': 'The paper is organized as follows. Section 2 gives the problem statement. Section\n3 explains the literature survey. Section 4 focuses on the datasets. Section 5 discusses\nthe implementations and the result analysis. Finally, Section 6 concludes the paper,\nsummarizing the key points and results and the future scope.\n\n2\n\n---', 'language': None, 'chunk_index': 9}, {'score': 0.81342167, 'chunk_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464_27', 'doc_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464', 'content': '<td>Better unmixing and<br/>abundance estimation</td>\n<td>Needs good anomaly<br/>detection strategy</td>\n</tr>\n</tbody>\n</table>', 'language': None, 'chunk_index': 27}]
+[ 2026-03-05 09:24:56,193 ] 210 root - INFO - Parallel fetch done — 6 history turns, 5 chunks
+[ 2026-03-05 09:24:56,879 ] 1740 httpx - INFO - HTTP Request: POST https://api.sarvam.ai/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-03-05 09:24:57,357 ] 39 root - INFO - Message saved: user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d, session=92a602ef-9c59-405f-9bc2-e8557da5241b, role=user
+[ 2026-03-05 09:24:57,359 ] 39 root - INFO - Message saved: user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d, session=92a602ef-9c59-405f-9bc2-e8557da5241b, role=assistant
+[ 2026-03-05 09:24:57,361 ] 246 root - INFO - Turn persisted: user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d, session=92a602ef-9c59-405f-9bc2-e8557da5241b
+[ 2026-03-05 09:26:08,099 ] 43 root - INFO - Chat request: user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d, session=92a602ef-9c59-405f-9bc2-e8557da5241b
+[ 2026-03-05 09:26:08,386 ] 1740 httpx - INFO - HTTP Request: POST https://api.sarvam.ai/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-03-05 09:26:08,440 ] 105 root - INFO - Intent resolved by LLM classifier → '1' for: 'ok tell me about the architecture of deep autoencoder used'
+[ 2026-03-05 09:26:08,440 ] 142 root - INFO - Intent: document — query: 'ok tell me about the architecture of deep autoencoder used'
+[ 2026-03-05 09:26:08,440 ] 196 root - INFO - Fetching history and search results in parallel...
+[ 2026-03-05 09:26:08,449 ] 59 root - INFO - Initiating query embedding...
+[ 2026-03-05 09:26:08,460 ] 68 root - INFO - Fetched 6 history messages for user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d, session=92a602ef-9c59-405f-9bc2-e8557da5241b
+[ 2026-03-05 09:26:08,995 ] 1740 httpx - INFO - HTTP Request: POST https://router.huggingface.co/hf-inference/models/intfloat/multilingual-e5-large/pipeline/feature-extraction "HTTP/1.1 200 OK"
+[ 2026-03-05 09:26:09,000 ] 63 root - INFO - Query Embedding sucessful in 0.55seconds
+[ 2026-03-05 09:26:09,001 ] 66 root - INFO - Building user filter...
+[ 2026-03-05 09:26:09,001 ] 76 root - INFO - Initiating search...
+[ 2026-03-05 09:26:09,021 ] 1025 httpx - INFO - HTTP Request: POST http://qdrant:6333/collections/rag-collection/points/query "HTTP/1.1 200 OK"
+[ 2026-03-05 09:26:09,023 ] 86 root - INFO - Formatting Result...
+[ 2026-03-05 09:26:09,023 ] 98 root - INFO - Search completed in 0.02seconds
+[ 2026-03-05 09:26:09,023 ] 99 root - INFO - Search Results:[{'score': 0.86129683, 'chunk_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464_32', 'doc_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464', 'content': "2. **Right Branch (Decoder):** The data flows through the decoder layers. After the final decoder layer, it connects to the top of the 'Decoder' block. The output of this block feeds into the 'Classifier' at the top of the diagram.\n\nAdditionally, there is a horizontal skip connection (U-shape) connecting the output of the 'Encoder' block to the output of the 'Decoder' block. This connection bypasses the intermediate layers to allow the network to learn high-level features.\n\nThe final output of the architecture is directed to a block labeled 'Hyperspectrral Reconstruction'.*\n\n*Fig. 1 Architecture of Proposed Model*", 'language': None, 'chunk_index': 32}, {'score': 0.8526004, 'chunk_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464_3', 'doc_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464', 'content': '**Keywords:** Hyperspectral Image Classification, Deep Autoencoder, Spectral-Spatial\nFeatures, Optimizer Evaluation\n\n1\n\n---', 'language': None, 'chunk_index': 3}, {'score': 0.8523087, 'chunk_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464_31', 'doc_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464', 'content': "*The image displays a schematic diagram of a neural network architecture, specifically a U-Net or a similar encoder-decoder structure, labeled with the letter 'b'. The diagram illustrates the flow of data from left to right. \n\nThe flow begins on the far left with a color image input. This input feeds into a vertical 'Encoder' block, which consists of three sequential convolutional layers: '3x3 Conv 66', '3x3 Conv 128', and '3x3 Conv 256'. \n\nFrom the output of this encoder, the architecture splits into two parallel branches. \n\n1. **Left Branch (Encoder):** The data flows through the encoder layers. After the final encoder layer, it connects to the top of the 'Encoder' block. The output of this block feeds into the 'Classifier' at the top of the diagram.", 'language': None, 'chunk_index': 31}, {'score': 0.84891933, 'chunk_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464_28', 'doc_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464', 'content': '## 4 Proposed Model\n\nThe proposed architecture, HyperspectralAE, is a hybrid model that simultaneously\nlearns spectral-spatial features through an autoencoder structure and performs clas-\nsification through an integrated classifier branch. The design begins with an encoder\ncomposed of sequential convolutional layers, batch normalization, and ReLU activa-\ntions. MaxPooling layers are strategically placed to reduce spatial dimensions while\npreserving feature richness. This encoder effectively compresses the high-dimensional\nhyperspectral input into a compact latent representation that captures the most sig-\nnificant spectral-spatial information essential for both reconstruction and classification\ntasks.', 'language': None, 'chunk_index': 28}, {'score': 0.84597254, 'chunk_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464_2', 'doc_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464', 'content': 'lighting the method’s broad applicability and robustness. The outcomes affirm\nthat autoencoder-based deep learning approaches efficiently encode intricate\nspectral-spatial characteristics, substantially advancing accuracy and reliability\nin hyperspectral image analysis.', 'language': None, 'chunk_index': 2}]
+[ 2026-03-05 09:26:09,024 ] 210 root - INFO - Parallel fetch done — 6 history turns, 5 chunks
+[ 2026-03-05 09:26:09,881 ] 1740 httpx - INFO - HTTP Request: POST https://api.sarvam.ai/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-03-05 09:26:12,225 ] 39 root - INFO - Message saved: user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d, session=92a602ef-9c59-405f-9bc2-e8557da5241b, role=user
+[ 2026-03-05 09:26:12,227 ] 39 root - INFO - Message saved: user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d, session=92a602ef-9c59-405f-9bc2-e8557da5241b, role=assistant
+[ 2026-03-05 09:26:12,229 ] 246 root - INFO - Turn persisted: user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d, session=92a602ef-9c59-405f-9bc2-e8557da5241b
+[ 2026-03-05 09:26:40,249 ] 43 root - INFO - Chat request: user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d, session=92a602ef-9c59-405f-9bc2-e8557da5241b
+[ 2026-03-05 09:26:40,973 ] 1740 httpx - INFO - HTTP Request: POST https://api.sarvam.ai/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-03-05 09:26:41,026 ] 105 root - INFO - Intent resolved by LLM classifier → '1' for: 'what are the comparision results'
+[ 2026-03-05 09:26:41,026 ] 142 root - INFO - Intent: document — query: 'what are the comparision results'
+[ 2026-03-05 09:26:41,026 ] 196 root - INFO - Fetching history and search results in parallel...
+[ 2026-03-05 09:26:41,033 ] 59 root - INFO - Initiating query embedding...
+[ 2026-03-05 09:26:41,042 ] 68 root - INFO - Fetched 6 history messages for user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d, session=92a602ef-9c59-405f-9bc2-e8557da5241b
+[ 2026-03-05 09:26:41,501 ] 1740 httpx - INFO - HTTP Request: POST https://router.huggingface.co/hf-inference/models/intfloat/multilingual-e5-large/pipeline/feature-extraction "HTTP/1.1 200 OK"
+[ 2026-03-05 09:26:41,507 ] 63 root - INFO - Query Embedding sucessful in 0.47seconds
+[ 2026-03-05 09:26:41,507 ] 66 root - INFO - Building user filter...
+[ 2026-03-05 09:26:41,508 ] 76 root - INFO - Initiating search...
+[ 2026-03-05 09:26:41,539 ] 1025 httpx - INFO - HTTP Request: POST http://qdrant:6333/collections/rag-collection/points/query "HTTP/1.1 200 OK"
+[ 2026-03-05 09:26:41,541 ] 86 root - INFO - Formatting Result...
+[ 2026-03-05 09:26:41,541 ] 98 root - INFO - Search completed in 0.03seconds
+[ 2026-03-05 09:26:41,542 ] 99 root - INFO - Search Results:[{'score': 0.8189603, 'chunk_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464_56', 'doc_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464', 'content': '*Table 4: Comparison of Best Accuracies Between Previous Studies\nand Our Experiment*', 'language': None, 'chunk_index': 56}, {'score': 0.8142249, 'chunk_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464_21', 'doc_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464', 'content': 'spectral images. Table 1 shows the comparative study of some published articles related\nto autoencoder-based hyperspetral image classification techniques.', 'language': None, 'chunk_index': 21}, {'score': 0.8111896, 'chunk_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464_48', 'doc_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464', 'content': '*| Optimizer | Accuracy |\n| :--- | :--- |\n| SGD | ~93 |\n| Adadelta | ~97 |\n| Adagrad | ~98 |\n| Adam | ~71 |*\n\n***Fig. 2** Graphical Representation of Experimental Results: Dataset vs Optimizer Performance*', 'language': None, 'chunk_index': 48}, {'score': 0.80812573, 'chunk_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464_50', 'doc_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464', 'content': 'ers, with Adagrad achieving an impressive $99.815\\%$ accuracy, indicating that the model\ngeneralized extremely well for this dataset. Graphical Representation of Experimental\nResults: Dataset vs Optimizer Performance is shown in Fig. 2.', 'language': None, 'chunk_index': 50}, {'score': 0.8062475, 'chunk_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464_53', 'doc_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464', 'content': "The left panel displays a clean, segmented map where distinct regions are separated by solid black lines, resembling a Voronoi tessellation or a binary occupancy grid. The regions are colored in a palette of blue, green, purple, orange, and pink. The right panel displays the corresponding visualization of the same data, but with the boundaries between regions blurred or 'noisy'. The colors appear as pixelated, stippled clusters rather than sharp polygons, suggesting a visualization of a probability distribution, a segmentation mask, or a noisy segmentation result where the decision boundaries are obscured by variance or sampling noise.*\n\n*Fig. 3 Prediction vs Gound Truth for Indian Pines Dataset*", 'language': None, 'chunk_index': 53}]
+[ 2026-03-05 09:26:41,542 ] 210 root - INFO - Parallel fetch done — 6 history turns, 5 chunks
+[ 2026-03-05 09:26:42,560 ] 1740 httpx - INFO - HTTP Request: POST https://api.sarvam.ai/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-03-05 09:26:44,375 ] 39 root - INFO - Message saved: user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d, session=92a602ef-9c59-405f-9bc2-e8557da5241b, role=user
+[ 2026-03-05 09:26:44,376 ] 39 root - INFO - Message saved: user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d, session=92a602ef-9c59-405f-9bc2-e8557da5241b, role=assistant
+[ 2026-03-05 09:26:44,378 ] 246 root - INFO - Turn persisted: user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d, session=92a602ef-9c59-405f-9bc2-e8557da5241b
+[ 2026-03-05 09:27:19,580 ] 67 root - INFO - [WS] Connected: user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d session=92a602ef-9c59-405f-9bc2-e8557da5241b
+[ 2026-03-05 09:27:19,816 ] 92 root - INFO - [ASR] Connected — model=saaras:v3 mode=transcribe lang=hi-IN rate=16000Hz
+[ 2026-03-05 09:27:20,812 ] 196 root - INFO - [ASR] VAD: speech_start
+[ 2026-03-05 09:27:22,225 ] 200 root - INFO - [ASR] VAD: speech_end
+[ 2026-03-05 09:27:22,425 ] 213 root - INFO - [ASR] Transcript: 'टेल मी मोर अबाउट द रिसर्च।' → lang=hi-IN
+[ 2026-03-05 09:27:22,426 ] 64 root - INFO - [Pipeline] RAG start | query='टेल मी मोर अबाउट द रिसर्च।…'
+[ 2026-03-05 09:27:22,731 ] 1740 httpx - INFO - HTTP Request: POST https://api.sarvam.ai/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-03-05 09:27:22,740 ] 105 root - INFO - Intent resolved by LLM classifier → '1' for: 'टेल मी मोर अबाउट द रिसर्च।'
+[ 2026-03-05 09:27:22,740 ] 142 root - INFO - Intent: document — query: 'टेल मी मोर अबाउट द रिसर्च।'
+[ 2026-03-05 09:27:22,740 ] 196 root - INFO - Fetching history and search results in parallel...
+[ 2026-03-05 09:27:22,745 ] 59 root - INFO - Initiating query embedding...
+[ 2026-03-05 09:27:22,755 ] 68 root - INFO - Fetched 6 history messages for user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d, session=92a602ef-9c59-405f-9bc2-e8557da5241b
+[ 2026-03-05 09:27:23,197 ] 1740 httpx - INFO - HTTP Request: POST https://router.huggingface.co/hf-inference/models/intfloat/multilingual-e5-large/pipeline/feature-extraction "HTTP/1.1 200 OK"
+[ 2026-03-05 09:27:23,212 ] 63 root - INFO - Query Embedding sucessful in 0.47seconds
+[ 2026-03-05 09:27:23,212 ] 66 root - INFO - Building user filter...
+[ 2026-03-05 09:27:23,213 ] 76 root - INFO - Initiating search...
+[ 2026-03-05 09:27:23,252 ] 1025 httpx - INFO - HTTP Request: POST http://qdrant:6333/collections/rag-collection/points/query "HTTP/1.1 200 OK"
+[ 2026-03-05 09:27:23,256 ] 86 root - INFO - Formatting Result...
+[ 2026-03-05 09:27:23,256 ] 98 root - INFO - Search completed in 0.04seconds
+[ 2026-03-05 09:27:23,257 ] 99 root - INFO - Search Results:[{'score': 0.79690295, 'chunk_id': '2e72d73a-2968-40ca-b683-f398e907c353_3', 'doc_id': '2e72d73a-2968-40ca-b683-f398e907c353', 'content': 'Thank you for your time and consideration.\n\nBest regards,\nLalan Kumar', 'language': None, 'chunk_index': 3}, {'score': 0.78573406, 'chunk_id': '2e72d73a-2968-40ca-b683-f398e907c353_1', 'doc_id': '2e72d73a-2968-40ca-b683-f398e907c353', 'content': 'I’ve built and deployed AI workflows leveraging LLMs, embeddings, and RAG architectures,\noptimized inference pipelines, and contributed open-source tools focused on practical AI\nengineering. I also have a research paper approved for publication in the Journal of Earth\nSystem Science, reflecting my ability to combine rigorous research thinking with applied\nengineering.', 'language': None, 'chunk_index': 1}, {'score': 0.78189635, 'chunk_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464_56', 'doc_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464', 'content': '*Table 4: Comparison of Best Accuracies Between Previous Studies\nand Our Experiment*', 'language': None, 'chunk_index': 56}, {'score': 0.7741973, 'chunk_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464_54', 'doc_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464', 'content': '*The provided image is not a data chart, graph, or plot. It appears to be a high-contrast, stylized digital rendering or a visualization of a 3D model, possibly a CAD (Computer-Aided Design) drawing or a point cloud representation of a mechanical component. The image features a dark background with various geometric shapes outlined in bright colors (red, cyan, purple, green, and blue). These shapes include curved surfaces, rectangular blocks, and what appear to be cross-sections of a cylindrical or tubular structure. There are no X or Y axes, no units, no legends, and no numerical data points present. Consequently, no quantitative data can be extracted.*\n\n*Fig. 4 Prediction vs Gound Truth for PaviaC Dataset*\n\n11\n\n---', 'language': None, 'chunk_index': 54}, {'score': 0.7710391, 'chunk_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464_45', 'doc_id': '9f8e0d9e-a6f2-4116-835b-3d1b1c8f7464', 'content': '*| Optimizer | Accuracy |\n| :--- | :--- |\n| SGD | ~97 |\n| Adadelta | ~96 |\n| Adagrad | ~82 |\n| Adam | ~77 |*', 'language': None, 'chunk_index': 45}]
+[ 2026-03-05 09:27:23,258 ] 210 root - INFO - Parallel fetch done — 6 history turns, 5 chunks
+[ 2026-03-05 09:27:23,981 ] 1740 httpx - INFO - HTTP Request: POST https://api.sarvam.ai/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-03-05 09:27:24,610 ] 39 root - INFO - Message saved: user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d, session=92a602ef-9c59-405f-9bc2-e8557da5241b, role=user
+[ 2026-03-05 09:27:24,612 ] 39 root - INFO - Message saved: user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d, session=92a602ef-9c59-405f-9bc2-e8557da5241b, role=assistant
+[ 2026-03-05 09:27:24,616 ] 246 root - INFO - Turn persisted: user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d, session=92a602ef-9c59-405f-9bc2-e8557da5241b
+[ 2026-03-05 09:27:24,617 ] 101 root - INFO - [Pipeline] RAG done | 124 tokens, 614 chars
+[ 2026-03-05 09:27:24,617 ] 111 root - INFO - [Pipeline] TTS start | lang=hi-IN
+[ 2026-03-05 09:27:24,617 ] 66 root - INFO - [TTS] Synthesizing 614 chars | lang=hi-IN speaker=shubh
+[ 2026-03-05 09:27:24,812 ] 86 root - INFO - [TTS] WebSocket configured.
+[ 2026-03-05 09:27:24,814 ] 90 root - INFO - [TTS] Text sent and buffer flushed.
+[ 2026-03-05 09:27:37,744 ] 108 root - INFO - [TTS] Done — 376 chunks streamed.
+[ 2026-03-05 09:27:37,782 ] 139 root - INFO - [Pipeline] Turn complete | 376 TTS chunks sent
+[ 2026-03-05 09:28:05,662 ] 151 root - INFO - [WS] Stop signal. Total PCM chunks received: 5759
+[ 2026-03-05 09:28:05,666 ] 140 root - INFO - [ASR] Send loop: sentinel received — sent 5759 chunks / 1474304 bytes total. Flushing.
+[ 2026-03-05 09:28:05,674 ] 121 root - INFO - [ASR] Session closed.
+[ 2026-03-05 09:28:05,718 ] 185 root - INFO - [WS] Session closed: user=5f2ce50b-eaf4-4c21-bfcd-af66c5bfb43d session=92a602ef-9c59-405f-9bc2-e8557da5241b
+[ 2026-03-05 09:28:16,936 ] 48 root - INFO - VoiceRAG shutting down.
