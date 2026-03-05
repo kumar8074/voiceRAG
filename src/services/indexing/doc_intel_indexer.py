@@ -221,7 +221,7 @@ if __name__ == "__main__":
     import asyncio
     indexer = DocIntelIndexer()
     results = asyncio.run(indexer.index_many(
-        files=[{"file_path": "tmp/Springer_Nature_LaTeX_Template.pdf", "original_name": "Springer"}],
+        files=[{"file_path": "tmp/Startup India Kit_v5.pdf", "original_name": "Startup-kit"}],
         user_id="1",
         session_id="1"
     ))

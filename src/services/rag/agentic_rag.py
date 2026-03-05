@@ -20,6 +20,8 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from langgraph.graph import StateGraph, START, END
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
 
+from evals.background_eval import fire_eval
+
 from ...config import LLM_MODEL
 from ...logger import logging
 from ..search.search_service import SearchService
@@ -149,7 +151,8 @@ class RAGService:
 
         await self._save_turn(
             state["db"], state["user_id"], state["session_id"],
-            state["query"], full_response
+            state["query"], full_response,
+            is_document_query=False
         )
         logging.info(f"[Graph] General response: {len(full_response)} chars.")
         return {"final_response": full_response}
@@ -321,7 +324,8 @@ class RAGService:
 
         await self._save_turn(
             state["db"], state["user_id"], state["session_id"],
-            state["query"], full_response
+            state["query"], full_response,
+            is_document_query=True
         )
         logging.info(f"[Graph] Generated response: {len(full_response)} chars.")
         return {"final_response": full_response}
@@ -340,7 +344,8 @@ class RAGService:
 
         await self._save_turn(
             state["db"], state["user_id"], state["session_id"],
-            state["query"], full_response
+            state["query"], full_response,
+            is_document_query=False
         )
         logging.info(f"[Graph] No-results response: {len(full_response)} chars.")
         return {"final_response": full_response}
@@ -404,7 +409,8 @@ class RAGService:
         user_id: str,
         session_id: str,
         query: str,
-        response: str
+        response: str,
+        is_document_query: bool = False, 
     ) -> None:
         await self.store.add_message(db, user_id, session_id, "user", query)
         await self.store.add_message(db, user_id, session_id, "assistant", response)
@@ -412,6 +418,14 @@ class RAGService:
         logging.info(
             f"[Graph] Turn persisted: user={user_id}, session={session_id}"
         )
+        
+        # Fire background eval only for document queries
+        if is_document_query:
+            fire_eval(
+                query=query,
+                user_id=user_id,
+                session_id=session_id
+            )
 
 
 # Example usage

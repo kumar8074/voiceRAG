@@ -1,0 +1,1933 @@
+{
+  "total_queries": 30,
+  "passed": 10,
+  "partial": 19,
+  "failed": 1,
+  "avg_context_relevance": 0.5752,
+  "avg_context_coverage": 0.3842,
+  "avg_faithfulness": 0.927,
+  "avg_overall_score": 0.6288,
+  "results": [
+    {
+      "query": "What is the definition of a Startup under Startup India?",
+      "user_id": "1",
+      "session_id": "1",
+      "total_chunks_retrieved": 5,
+      "chunk_scores": [
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_68",
+          "chunk_index": 0,
+          "content_preview": "## What is a Startup?\n\nAn entity shall be considered as a Startup:\n\nIf it is incorporated as a private limited company (as defined in the Companies Act, 2013) or registered as a partnership firm (unde",
+          "retrieval_score": 0.8865,
+          "context_relevance": 1.0,
+          "context_coverage": 1.0,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk directly provides the official definition of a Startup under Startup India, covering incorporation type, age, turnover limits, and innovation/scalability criteria as per the scheme's guidelines."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_69",
+          "chunk_index": 1,
+          "content_preview": "Provided that any such entity formed by splitting up or reconstruction of a business already in existence shall not be considered a 'Startup'.\n\nVisit: www.startupindia.gov.in",
+          "retrieval_score": 0.8603,
+          "context_relevance": 0.6,
+          "context_coverage": 0.2,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk addresses part of the definition (exclusion criteria) but misses the core elements (innovation, age, turnover) required for a complete answer."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_7",
+          "chunk_index": 2,
+          "content_preview": "• Panel of facilitators to assist in IP applications - Facilitators are responsible for providing\ngeneral advisory on different IPRs, and information on protecting and promoting IPRs in\nother countrie",
+          "retrieval_score": 0.85,
+          "context_relevance": 0.2,
+          "context_coverage": 0.0,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk discusses IPR facilitators and rebates but does not define what a Startup is under Startup India."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_44",
+          "chunk_index": 3,
+          "content_preview": "## Programs and Challenges\n\nStartup India works with multiple corporates and Government departments to bridge the\ngap and build connections with Startups. Any industry or department can solve for thei",
+          "retrieval_score": 0.8456,
+          "context_relevance": 0.2,
+          "context_coverage": 0.0,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk discusses collaboration programs and challenges under Startup India but does not contain the definition of a startup."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_4",
+          "chunk_index": 4,
+          "content_preview": "## Resources\n\nLearning and Development Programs – Step-by-step guide to starting a business in India\n\nGovernment Schemes – Centralized repository of all Government schemes for the Startup Ecosystem Ac",
+          "retrieval_score": 0.8448,
+          "context_relevance": 0.2,
+          "context_coverage": 0.1,
+          "faithfulness": 0.9,
+          "judge_reasoning": "The chunk lists resources but does not contain the actual definition of a Startup under Startup India."
+        }
+      ],
+      "avg_context_relevance": 0.44,
+      "avg_context_coverage": 0.26,
+      "avg_faithfulness": 0.98,
+      "overall_score": 0.56,
+      "retrieval_verdict": "PARTIAL",
+      "evaluated_at": "2026-03-05T11:14:56.948664"
+    },
+    {
+      "query": "What are the eligibility criteria for DPIIT recognition?",
+      "user_id": "1",
+      "session_id": "1",
+      "total_chunks_retrieved": 5,
+      "chunk_scores": [
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_3",
+          "chunk_index": 0,
+          "content_preview": "## DPIIT-Recognised Startups are eligible for the following benefits:\n\nIntellectual Property Rights (IPR) benefits\n\nRelaxation in public procurements norms\n\nSelf-Certification under Labour & Environme",
+          "retrieval_score": 0.8497,
+          "context_relevance": 1.0,
+          "context_coverage": 0.8,
+          "faithfulness": 1.0,
+          "judge_reasoning": "Directly lists DPIIT recognition benefits but omits any mention of eligibility criteria requirements."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_71",
+          "chunk_index": 1,
+          "content_preview": "## Get DPIIT Recognised!\n\nStartups can apply to recognised by\nDepartment for Promotion of Industry and Internal Trade to\navail numerous benefits.\n\n22,000+\nStartups Recognised\n\nRead on to see how:",
+          "retrieval_score": 0.8439,
+          "context_relevance": 0.8,
+          "context_coverage": 0.2,
+          "faithfulness": 0.9,
+          "judge_reasoning": "The chunk mentions DPIIT recognition and startup benefits but lacks specific eligibility criteria details."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_23",
+          "chunk_index": 2,
+          "content_preview": "## Exemption for the purpose of clause (viib) of sub-section (2) of section 56 of the Act\n\n• A DPIIT recognized Startup is eligible for exemption from the provisions of section 56(2)(viib) of the Inco",
+          "retrieval_score": 0.8238,
+          "context_relevance": 0.6,
+          "context_coverage": 0.3,
+          "faithfulness": 0.9,
+          "judge_reasoning": "The chunk discusses tax exemptions for DPIIT-recognized startups but does not directly address general eligibility criteria for DPIIT recognition itself."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_13",
+          "chunk_index": 3,
+          "content_preview": "*The image provided is a QR code, not a chart or graph. Therefore, there is no textual data or mathematical content to transcribe.*\n\nKnow more about public procurement, scan this QR code.\n\nDPIIT recog",
+          "retrieval_score": 0.8132,
+          "context_relevance": 0.2,
+          "context_coverage": 0.1,
+          "faithfulness": 0.8,
+          "judge_reasoning": "The chunk mentions DPIIT recognition benefits but focuses on post-recognition opportunities rather than eligibility criteria."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_81",
+          "chunk_index": 4,
+          "content_preview": "## Your profile details have been successfully recorded.\n\nYou may also consider getting Startup recognition, a process by which Department of Industrial Policy and Promotion recognizes you as a Startu",
+          "retrieval_score": 0.8017,
+          "context_relevance": 0.8,
+          "context_coverage": 0.6,
+          "faithfulness": 0.9,
+          "judge_reasoning": "The chunk discusses DPIIT (DIPP) startup recognition criteria and process but omits key details like eligibility requirements such as age, innovation focus, or financial thresholds mentioned in the query."
+        }
+      ],
+      "avg_context_relevance": 0.68,
+      "avg_context_coverage": 0.4,
+      "avg_faithfulness": 0.9,
+      "overall_score": 0.66,
+      "retrieval_verdict": "PARTIAL",
+      "evaluated_at": "2026-03-05T11:15:01.164538"
+    },
+    {
+      "query": "What tax benefits are available for recognised startups?",
+      "user_id": "1",
+      "session_id": "1",
+      "total_chunks_retrieved": 5,
+      "chunk_scores": [
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_3",
+          "chunk_index": 0,
+          "content_preview": "## DPIIT-Recognised Startups are eligible for the following benefits:\n\nIntellectual Property Rights (IPR) benefits\n\nRelaxation in public procurements norms\n\nSelf-Certification under Labour & Environme",
+          "retrieval_score": 0.8705,
+          "context_relevance": 1.0,
+          "context_coverage": 0.8,
+          "faithfulness": 1.0,
+          "judge_reasoning": "Directly addresses tax benefits (Section 80 IAC) and other DPIIT recognition benefits relevant to startups, with clear and coherent information."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_22",
+          "chunk_index": 1,
+          "content_preview": "## Tax Exemption for 3 years\n\nThe recognised Startups that are granted an Inter-Ministerial Board Certificate are exempted from income-tax for a period of 3 consecutive years out of 7 years since inco",
+          "retrieval_score": 0.8487,
+          "context_relevance": 1.0,
+          "context_coverage": 0.5,
+          "faithfulness": 1.0,
+          "judge_reasoning": "Directly addresses tax exemption for recognized startups but only covers one specific benefit (3-year exemption) without mentioning other potential benefits."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_81",
+          "chunk_index": 2,
+          "content_preview": "## Your profile details have been successfully recorded.\n\nYou may also consider getting Startup recognition, a process by which Department of Industrial Policy and Promotion recognizes you as a Startu",
+          "retrieval_score": 0.8368,
+          "context_relevance": 0.9,
+          "context_coverage": 0.6,
+          "faithfulness": 0.8,
+          "judge_reasoning": "The chunk mentions tax benefits indirectly through 'a host of benefits' but lacks specific details like tax exemptions or incentives, reducing coverage."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_20",
+          "chunk_index": 3,
+          "content_preview": "## Tax Exemption\n\nStartups incorporated on or after 1 $ ^{st} $  April 2016 can apply for income tax exemption. The Inter-Ministerial Board validates the innovative nature of the business for granting",
+          "retrieval_score": 0.8354,
+          "context_relevance": 0.9,
+          "context_coverage": 0.6,
+          "faithfulness": 0.8,
+          "judge_reasoning": "Directly addresses tax exemption for startups post-2016 but lacks details on other benefits and application process beyond QR code mention."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_71",
+          "chunk_index": 4,
+          "content_preview": "## Get DPIIT Recognised!\n\nStartups can apply to recognised by\nDepartment for Promotion of Industry and Internal Trade to\navail numerous benefits.\n\n22,000+\nStartups Recognised\n\nRead on to see how:",
+          "retrieval_score": 0.8324,
+          "context_relevance": 0.8,
+          "context_coverage": 0.2,
+          "faithfulness": 0.9,
+          "judge_reasoning": "Mentions DPIIT recognition and benefits but lacks specific tax benefit details."
+        }
+      ],
+      "avg_context_relevance": 0.92,
+      "avg_context_coverage": 0.54,
+      "avg_faithfulness": 0.9,
+      "overall_score": 0.7867,
+      "retrieval_verdict": "PASS",
+      "evaluated_at": "2026-03-05T11:15:05.842619"
+    },
+    {
+      "query": "How many years of income tax exemption can a startup get?",
+      "user_id": "1",
+      "session_id": "1",
+      "total_chunks_retrieved": 5,
+      "chunk_scores": [
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_22",
+          "chunk_index": 0,
+          "content_preview": "## Tax Exemption for 3 years\n\nThe recognised Startups that are granted an Inter-Ministerial Board Certificate are exempted from income-tax for a period of 3 consecutive years out of 7 years since inco",
+          "retrieval_score": 0.9108,
+          "context_relevance": 1.0,
+          "context_coverage": 0.8,
+          "faithfulness": 1.0,
+          "judge_reasoning": "Directly addresses the tax exemption duration for startups but does not mention potential extensions or additional conditions beyond the 3-year period."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_20",
+          "chunk_index": 1,
+          "content_preview": "## Tax Exemption\n\nStartups incorporated on or after 1 $ ^{st} $  April 2016 can apply for income tax exemption. The Inter-Ministerial Board validates the innovative nature of the business for granting",
+          "retrieval_score": 0.8745,
+          "context_relevance": 0.8,
+          "context_coverage": 0.6,
+          "faithfulness": 0.9,
+          "judge_reasoning": "The chunk mentions tax exemption for startups incorporated after April 2016 and the application process but does not specify the exact number of years of exemption, leaving the query partially unanswered."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_3",
+          "chunk_index": 2,
+          "content_preview": "## DPIIT-Recognised Startups are eligible for the following benefits:\n\nIntellectual Property Rights (IPR) benefits\n\nRelaxation in public procurements norms\n\nSelf-Certification under Labour & Environme",
+          "retrieval_score": 0.8596,
+          "context_relevance": 0.8,
+          "context_coverage": 0.6,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk mentions income tax exemption under Section 80 IAC for 3 out of 7 years but does not explicitly state the maximum years a startup can claim, which is the core of the query."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_23",
+          "chunk_index": 3,
+          "content_preview": "## Exemption for the purpose of clause (viib) of sub-section (2) of section 56 of the Act\n\n• A DPIIT recognized Startup is eligible for exemption from the provisions of section 56(2)(viib) of the Inco",
+          "retrieval_score": 0.8438,
+          "context_relevance": 0.8,
+          "context_coverage": 0.6,
+          "faithfulness": 0.9,
+          "judge_reasoning": "The chunk mentions tax exemption for startups under section 56(2)(viib) but does not specify the duration of exemption, only the requirement to file Form 2 with DPIIT."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_14",
+          "chunk_index": 4,
+          "content_preview": "## Self-Certification under Labour & Environment Laws\n\nTo reduce the regulatory burden on Startups, thereby allowing them to focus on their core\nbusiness & keep compliance costs low.\n\nStartups are all",
+          "retrieval_score": 0.8376,
+          "context_relevance": 0.2,
+          "context_coverage": 0.0,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk discusses self-certification under Labour and Environment laws but does not mention income tax exemption, which is the focus of the query."
+        }
+      ],
+      "avg_context_relevance": 0.72,
+      "avg_context_coverage": 0.52,
+      "avg_faithfulness": 0.96,
+      "overall_score": 0.7333,
+      "retrieval_verdict": "PASS",
+      "evaluated_at": "2026-03-05T11:15:12.213214"
+    },
+    {
+      "query": "What is the Fund of Funds for Startups and how does it work?",
+      "user_id": "1",
+      "session_id": "1",
+      "total_chunks_retrieved": 5,
+      "chunk_scores": [
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_24",
+          "chunk_index": 0,
+          "content_preview": "*There is a QR code in the image.*\n\nFor any queries please call us on 1800115565 or drop us an email at dipp-startups@nic.in\n\n---\n\nFund of Funds for Startups\n\nTo provide equity funding support for dev",
+          "retrieval_score": 0.8602,
+          "context_relevance": 0.9,
+          "context_coverage": 0.8,
+          "faithfulness": 0.9,
+          "judge_reasoning": "The chunk directly addresses the Fund of Funds for Startups, its purpose, structure, and funding flow, but omits minor operational details like the QR code's relevance to the query."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_7",
+          "chunk_index": 1,
+          "content_preview": "• Panel of facilitators to assist in IP applications - Facilitators are responsible for providing\ngeneral advisory on different IPRs, and information on protecting and promoting IPRs in\nother countrie",
+          "retrieval_score": 0.8366,
+          "context_relevance": 0.3,
+          "context_coverage": 0.2,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk discusses IP application assistance and fee rebates for startups but does not mention the Fund of Funds for Startups or its operational mechanism."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_121",
+          "chunk_index": 2,
+          "content_preview": "## Seed\n\nProduct/Service\nlaunched in Market\n\nFund Sources: Angel Investors, Pitching Competitions, Collateral-Free Debt",
+          "retrieval_score": 0.8352,
+          "context_relevance": 0.3,
+          "context_coverage": 0.2,
+          "faithfulness": 0.8,
+          "judge_reasoning": "Mentions fund sources relevant to startups but doesn't explain Fund of Funds structure or mechanics."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_73",
+          "chunk_index": 3,
+          "content_preview": "It shows a tweet from \"Startup India\" discussing funding from Japanese entities. Below the feed is a thumbnail image of a handshake. The top of the image contains a navigation bar with links like \"ABO",
+          "retrieval_score": 0.8325,
+          "context_relevance": 0.2,
+          "context_coverage": 0.1,
+          "faithfulness": 0.8,
+          "judge_reasoning": "The chunk describes a tweet and image interface but provides no substantive information about the Fund of Funds for Startups or its mechanisms."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_127",
+          "chunk_index": 4,
+          "content_preview": "## Pre-Seed\n\nWorking on\nIdea/Prototype\n\nFund Sources: Family,\nFriends, Grants, B-Plan\nCompetitions,\nCollateral-Free Debt",
+          "retrieval_score": 0.8315,
+          "context_relevance": 0.2,
+          "context_coverage": 0.1,
+          "faithfulness": 0.8,
+          "judge_reasoning": "Mentions funding sources relevant to startups but doesn't explain Fund of Funds structure or mechanisms."
+        }
+      ],
+      "avg_context_relevance": 0.38,
+      "avg_context_coverage": 0.28,
+      "avg_faithfulness": 0.86,
+      "overall_score": 0.5067,
+      "retrieval_verdict": "PARTIAL",
+      "evaluated_at": "2026-03-05T11:15:16.910305"
+    },
+    {
+      "query": "What is Section 80 IAC and who can apply for it?",
+      "user_id": "1",
+      "session_id": "1",
+      "total_chunks_retrieved": 5,
+      "chunk_scores": [
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_3",
+          "chunk_index": 0,
+          "content_preview": "## DPIIT-Recognised Startups are eligible for the following benefits:\n\nIntellectual Property Rights (IPR) benefits\n\nRelaxation in public procurements norms\n\nSelf-Certification under Labour & Environme",
+          "retrieval_score": 0.799,
+          "context_relevance": 0.8,
+          "context_coverage": 0.6,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk mentions Section 80 IAC in the context of DPIIT-recognized startups but does not fully explain what it is or explicitly state who can apply beyond implying startup eligibility."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_105",
+          "chunk_index": 1,
+          "content_preview": "அன்புடைமை ஆன்ற குடிப்பிறத்தல் இவ்விரண்டும் பண்புடைமை என்னும் வழக்கு.\n\nFormBO-IAC\n\nFor any queries please call us on 1800115565 or drop us an email at dipp-startups@nic.in\n\n---\n\nFill up the 'Startup Re",
+          "retrieval_score": 0.7887,
+          "context_relevance": 0.2,
+          "context_coverage": 0.1,
+          "faithfulness": 0.8,
+          "judge_reasoning": "The chunk contains a Tamil phrase unrelated to the query, mentions FormBO-IAC (unrelated to Section 80 IAC), and provides contact details for startups - none directly address the query about Section 80 IAC eligibility."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_82",
+          "chunk_index": 2,
+          "content_preview": "*The provided image is a graphic design illustration or abstract geometric artwork rather than a data chart or graph. It features a stylized, low-poly composition consisting of sharp triangles and pol",
+          "retrieval_score": 0.7871,
+          "context_relevance": 0.0,
+          "context_coverage": 0.0,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk describes an abstract geometric artwork and contact details, with no mention of Section 80 IAC or its application process."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_67",
+          "chunk_index": 3,
+          "content_preview": "*The image provided is a QR code, not a text document. Therefore, there is no text to transcribe.*\n\nFor any queries please call us on 1800115565 or drop us an email at dipp-startups@nic.in\n\n---",
+          "retrieval_score": 0.7848,
+          "context_relevance": 0.0,
+          "context_coverage": 0.0,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk contains only a QR code image description and contact details, providing no information about Section 80 IAC or its applicants."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_45",
+          "chunk_index": 4,
+          "content_preview": "*There is a QR code in the image.*\n\nYou can apply for these programs here: Scan this QR code.",
+          "retrieval_score": 0.7809,
+          "context_relevance": 0.0,
+          "context_coverage": 0.0,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk mentions a QR code for applications but provides no actual information about Section 80 IAC or eligibility criteria."
+        }
+      ],
+      "avg_context_relevance": 0.2,
+      "avg_context_coverage": 0.14,
+      "avg_faithfulness": 0.96,
+      "overall_score": 0.4333,
+      "retrieval_verdict": "PARTIAL",
+      "evaluated_at": "2026-03-05T11:15:21.571353"
+    },
+    {
+      "query": "What rebate do startups get on patent filing fees?",
+      "user_id": "1",
+      "session_id": "1",
+      "total_chunks_retrieved": 5,
+      "chunk_scores": [
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_7",
+          "chunk_index": 0,
+          "content_preview": "• Panel of facilitators to assist in IP applications - Facilitators are responsible for providing\ngeneral advisory on different IPRs, and information on protecting and promoting IPRs in\nother countrie",
+          "retrieval_score": 0.8904,
+          "context_relevance": 1.0,
+          "context_coverage": 0.8,
+          "faithfulness": 1.0,
+          "judge_reasoning": "Directly addresses patent filing fee rebates (80% for patents, 50% for trademarks) for startups, matching the query's focus on patent-related financial benefits."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_3",
+          "chunk_index": 1,
+          "content_preview": "## DPIIT-Recognised Startups are eligible for the following benefits:\n\nIntellectual Property Rights (IPR) benefits\n\nRelaxation in public procurements norms\n\nSelf-Certification under Labour & Environme",
+          "retrieval_score": 0.8333,
+          "context_relevance": 0.8,
+          "context_coverage": 0.6,
+          "faithfulness": 1.0,
+          "judge_reasoning": "Mentions IPR benefits including patent-related exemptions but doesn't specify exact rebate percentages or fee structures."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_6",
+          "chunk_index": 2,
+          "content_preview": "## Intellectual Property Rights (IPR)\n\nTo promote awareness and adoption of IPRs by Startups and facilitate them in protecting and commercialising the IPRs, Startup India provides access to high quali",
+          "retrieval_score": 0.818,
+          "context_relevance": 0.8,
+          "context_coverage": 0.6,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk mentions fast-tracking of patent applications for startups but does not specify the actual fee rebate percentage or monetary details."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_41",
+          "chunk_index": 3,
+          "content_preview": "*This image contains no text.*\n\nworth legal services\nprovided to Startups\n\nMyOperator",
+          "retrieval_score": 0.8158,
+          "context_relevance": 0.2,
+          "context_coverage": 0.1,
+          "faithfulness": 0.8,
+          "judge_reasoning": "The chunk mentions 'worth legal services provided to Startups' which is tangentially related to legal/patent services but doesn't specify any rebate details or patent filing fee discounts."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_20",
+          "chunk_index": 4,
+          "content_preview": "## Tax Exemption\n\nStartups incorporated on or after 1 $ ^{st} $  April 2016 can apply for income tax exemption. The Inter-Ministerial Board validates the innovative nature of the business for granting",
+          "retrieval_score": 0.8152,
+          "context_relevance": 0.2,
+          "context_coverage": 0.1,
+          "faithfulness": 0.9,
+          "judge_reasoning": "The chunk discusses income tax exemption for startups but does not mention patent filing fee rebates."
+        }
+      ],
+      "avg_context_relevance": 0.6,
+      "avg_context_coverage": 0.44,
+      "avg_faithfulness": 0.94,
+      "overall_score": 0.66,
+      "retrieval_verdict": "PARTIAL",
+      "evaluated_at": "2026-03-05T11:15:26.634351"
+    },
+    {
+      "query": "What is the difference between a patent rebate and a trademark rebate for startups?",
+      "user_id": "1",
+      "session_id": "1",
+      "total_chunks_retrieved": 5,
+      "chunk_scores": [
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_7",
+          "chunk_index": 0,
+          "content_preview": "• Panel of facilitators to assist in IP applications - Facilitators are responsible for providing\ngeneral advisory on different IPRs, and information on protecting and promoting IPRs in\nother countrie",
+          "retrieval_score": 0.8676,
+          "context_relevance": 1.0,
+          "context_coverage": 0.8,
+          "faithfulness": 1.0,
+          "judge_reasoning": "Directly addresses patent and trademark rebates for startups with specific percentages and cost reductions, though doesn't explain other differences beyond filing costs."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_108",
+          "chunk_index": 1,
+          "content_preview": "## What do you need?\n\nIncorporation/Registration Certificate\n\nDirector details\n\nProof of concept like pitch deck/website link/video (in case of a validation/\n\nearly traction/scaling stage startup) res",
+          "retrieval_score": 0.835,
+          "context_relevance": 0.3,
+          "context_coverage": 0.1,
+          "faithfulness": 0.8,
+          "judge_reasoning": "The chunk lists required documents for startups but doesn't explain differences between patent and trademark rebates."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_82",
+          "chunk_index": 2,
+          "content_preview": "*The provided image is a graphic design illustration or abstract geometric artwork rather than a data chart or graph. It features a stylized, low-poly composition consisting of sharp triangles and pol",
+          "retrieval_score": 0.8313,
+          "context_relevance": 0.0,
+          "context_coverage": 0.0,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk describes an abstract geometric artwork and contact information, unrelated to patent/trademark rebates for startups."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_67",
+          "chunk_index": 3,
+          "content_preview": "*The image provided is a QR code, not a text document. Therefore, there is no text to transcribe.*\n\nFor any queries please call us on 1800115565 or drop us an email at dipp-startups@nic.in\n\n---",
+          "retrieval_score": 0.8312,
+          "context_relevance": 0.0,
+          "context_coverage": 0.0,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk contains only contact information and a note about a QR code, with no substantive content related to patent vs. trademark rebates for startups."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_116",
+          "chunk_index": 4,
+          "content_preview": "IPR: The right of a person or a company to exclusively use its own plans, ideas, or other intangible assets without the worry of competition, at least for a specific period of time. These rights can i",
+          "retrieval_score": 0.8293,
+          "context_relevance": 0.2,
+          "context_coverage": 0.0,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk defines general concepts like IPR, crowdfunding, and seed funding but does not mention or explain patent/trademark rebates, their differences, or startup-specific considerations."
+        }
+      ],
+      "avg_context_relevance": 0.3,
+      "avg_context_coverage": 0.18,
+      "avg_faithfulness": 0.96,
+      "overall_score": 0.48,
+      "retrieval_verdict": "PARTIAL",
+      "evaluated_at": "2026-03-05T11:15:30.929580"
+    },
+    {
+      "query": "How can a startup self-certify compliance under labour laws?",
+      "user_id": "1",
+      "session_id": "1",
+      "total_chunks_retrieved": 5,
+      "chunk_scores": [
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_14",
+          "chunk_index": 0,
+          "content_preview": "## Self-Certification under Labour & Environment Laws\n\nTo reduce the regulatory burden on Startups, thereby allowing them to focus on their core\nbusiness & keep compliance costs low.\n\nStartups are all",
+          "retrieval_score": 0.9073,
+          "context_relevance": 0.9,
+          "context_coverage": 0.7,
+          "faithfulness": 0.8,
+          "judge_reasoning": "Directly addresses self-certification for labour laws but lacks full procedural details and environmental law coverage specifics."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_16",
+          "chunk_index": 1,
+          "content_preview": "## 27 States\n\nOffer Self-certification\n\nto Startups under 6 Labour laws",
+          "retrieval_score": 0.8565,
+          "context_relevance": 0.8,
+          "context_coverage": 0.6,
+          "faithfulness": 0.9,
+          "judge_reasoning": "The chunk mentions self-certification for startups under labor laws but lacks specific details on the process or which laws are covered."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_81",
+          "chunk_index": 2,
+          "content_preview": "## Your profile details have been successfully recorded.\n\nYou may also consider getting Startup recognition, a process by which Department of Industrial Policy and Promotion recognizes you as a Startu",
+          "retrieval_score": 0.8386,
+          "context_relevance": 0.8,
+          "context_coverage": 0.6,
+          "faithfulness": 0.9,
+          "judge_reasoning": "The chunk mentions self-certification of labor laws as part of startup recognition but doesn't explicitly explain the process or required steps for compliance."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_67",
+          "chunk_index": 3,
+          "content_preview": "*The image provided is a QR code, not a text document. Therefore, there is no text to transcribe.*\n\nFor any queries please call us on 1800115565 or drop us an email at dipp-startups@nic.in\n\n---",
+          "retrieval_score": 0.8303,
+          "context_relevance": 0.0,
+          "context_coverage": 0.0,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk contains only contact information and a note about a QR code image, with no substantive content related to labor law compliance self-certification for startups."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_68",
+          "chunk_index": 4,
+          "content_preview": "## What is a Startup?\n\nAn entity shall be considered as a Startup:\n\nIf it is incorporated as a private limited company (as defined in the Companies Act, 2013) or registered as a partnership firm (unde",
+          "retrieval_score": 0.8274,
+          "context_relevance": 0.2,
+          "context_coverage": 0.1,
+          "faithfulness": 1.0,
+          "judge_reasoning": "Defines startup criteria but doesn't address self-certification processes under labor laws."
+        }
+      ],
+      "avg_context_relevance": 0.54,
+      "avg_context_coverage": 0.4,
+      "avg_faithfulness": 0.92,
+      "overall_score": 0.62,
+      "retrieval_verdict": "PARTIAL",
+      "evaluated_at": "2026-03-05T11:15:35.267280"
+    },
+    {
+      "query": "Under how many labour laws can a startup self-certify?",
+      "user_id": "1",
+      "session_id": "1",
+      "total_chunks_retrieved": 5,
+      "chunk_scores": [
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_14",
+          "chunk_index": 0,
+          "content_preview": "## Self-Certification under Labour & Environment Laws\n\nTo reduce the regulatory burden on Startups, thereby allowing them to focus on their core\nbusiness & keep compliance costs low.\n\nStartups are all",
+          "retrieval_score": 0.8897,
+          "context_relevance": 1.0,
+          "context_coverage": 0.8,
+          "faithfulness": 1.0,
+          "judge_reasoning": "Directly addresses self-certification under labour laws (6 laws) and environment laws (3 laws), though environment provisions are conditional on industry category."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_16",
+          "chunk_index": 1,
+          "content_preview": "## 27 States\n\nOffer Self-certification\n\nto Startups under 6 Labour laws",
+          "retrieval_score": 0.8443,
+          "context_relevance": 0.8,
+          "context_coverage": 0.6,
+          "faithfulness": 0.9,
+          "judge_reasoning": "The chunk mentions self-certification for startups under 6 labour laws but does not explicitly state the total number of laws involved in the process."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_68",
+          "chunk_index": 2,
+          "content_preview": "## What is a Startup?\n\nAn entity shall be considered as a Startup:\n\nIf it is incorporated as a private limited company (as defined in the Companies Act, 2013) or registered as a partnership firm (unde",
+          "retrieval_score": 0.8024,
+          "context_relevance": 0.2,
+          "context_coverage": 0.0,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk defines startup eligibility criteria but does not mention labour laws for self-certification."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_81",
+          "chunk_index": 3,
+          "content_preview": "## Your profile details have been successfully recorded.\n\nYou may also consider getting Startup recognition, a process by which Department of Industrial Policy and Promotion recognizes you as a Startu",
+          "retrieval_score": 0.8001,
+          "context_relevance": 0.8,
+          "context_coverage": 0.6,
+          "faithfulness": 0.9,
+          "judge_reasoning": "The chunk mentions self-certification of 'certain environment and labor laws' but does not specify the exact number of laws, partially addressing the query."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_41",
+          "chunk_index": 4,
+          "content_preview": "*This image contains no text.*\n\nworth legal services\nprovided to Startups\n\nMyOperator",
+          "retrieval_score": 0.7895,
+          "context_relevance": 0.0,
+          "context_coverage": 0.0,
+          "faithfulness": 0.0,
+          "judge_reasoning": "The chunk contains no text related to labor laws or self-certification, only an image description and unrelated service information."
+        }
+      ],
+      "avg_context_relevance": 0.56,
+      "avg_context_coverage": 0.4,
+      "avg_faithfulness": 0.76,
+      "overall_score": 0.5733,
+      "retrieval_verdict": "PARTIAL",
+      "evaluated_at": "2026-03-05T11:15:40.315051"
+    },
+    {
+      "query": "What is the faster exit process for startups under Ministry of Corporate Affairs?",
+      "user_id": "1",
+      "session_id": "1",
+      "total_chunks_retrieved": 5,
+      "chunk_scores": [
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_18",
+          "chunk_index": 0,
+          "content_preview": "## Faster Exit for Startups\n\nMinistry of Corporate Affairs has notified Startups as ‘fast track firms’ enabling them to wind up operations within 90 days vis-a-vis 180 days for other companies. An ins",
+          "retrieval_score": 0.8724,
+          "context_relevance": 1.0,
+          "context_coverage": 0.8,
+          "faithfulness": 0.9,
+          "judge_reasoning": "Directly addresses faster exit process for startups under MCA with specific timelines and procedures, though missing minor details like QR code guidelines."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_6",
+          "chunk_index": 1,
+          "content_preview": "## Intellectual Property Rights (IPR)\n\nTo promote awareness and adoption of IPRs by Startups and facilitate them in protecting and commercialising the IPRs, Startup India provides access to high quali",
+          "retrieval_score": 0.8043,
+          "context_relevance": 0.3,
+          "context_coverage": 0.2,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk discusses IPR benefits for startups but does not address exit processes under the Ministry of Corporate Affairs."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_7",
+          "chunk_index": 2,
+          "content_preview": "• Panel of facilitators to assist in IP applications - Facilitators are responsible for providing\ngeneral advisory on different IPRs, and information on protecting and promoting IPRs in\nother countrie",
+          "retrieval_score": 0.8016,
+          "context_relevance": 0.8,
+          "context_coverage": 0.6,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk discusses fee rebates and facilitator support for startups under MCA but does not explicitly mention the 'faster exit process' aspect of the query."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_11",
+          "chunk_index": 3,
+          "content_preview": "*The image displays a stylized, orange line-art icon featuring three human figures. The figures are depicted from the chest up, wearing formal attire including collared shirts and neckties. The centra",
+          "retrieval_score": 0.8013,
+          "context_relevance": 0.3,
+          "context_coverage": 0.2,
+          "faithfulness": 0.8,
+          "judge_reasoning": "Mentions procurement norm relaxations for startups but lacks details on exit processes."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_22",
+          "chunk_index": 4,
+          "content_preview": "## Tax Exemption for 3 years\n\nThe recognised Startups that are granted an Inter-Ministerial Board Certificate are exempted from income-tax for a period of 3 consecutive years out of 7 years since inco",
+          "retrieval_score": 0.7986,
+          "context_relevance": 0.2,
+          "context_coverage": 0.1,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk discusses tax exemptions but does not address the exit process for startups under MCA."
+        }
+      ],
+      "avg_context_relevance": 0.52,
+      "avg_context_coverage": 0.38,
+      "avg_faithfulness": 0.94,
+      "overall_score": 0.6133,
+      "retrieval_verdict": "PARTIAL",
+      "evaluated_at": "2026-03-05T11:15:45.667321"
+    },
+    {
+      "query": "How many days does it take for a startup to wind up operations under the fast track process?",
+      "user_id": "1",
+      "session_id": "1",
+      "total_chunks_retrieved": 5,
+      "chunk_scores": [
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_18",
+          "chunk_index": 0,
+          "content_preview": "## Faster Exit for Startups\n\nMinistry of Corporate Affairs has notified Startups as ‘fast track firms’ enabling them to wind up operations within 90 days vis-a-vis 180 days for other companies. An ins",
+          "retrieval_score": 0.895,
+          "context_relevance": 1.0,
+          "context_coverage": 0.8,
+          "faithfulness": 0.9,
+          "judge_reasoning": "Directly addresses the query with specific timelines (90 days vs 180 days) and process details, though lacks minor procedural specifics like QR code guidelines."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_67",
+          "chunk_index": 1,
+          "content_preview": "*The image provided is a QR code, not a text document. Therefore, there is no text to transcribe.*\n\nFor any queries please call us on 1800115565 or drop us an email at dipp-startups@nic.in\n\n---",
+          "retrieval_score": 0.8222,
+          "context_relevance": 0.0,
+          "context_coverage": 0.0,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk contains only contact information and a note about a QR code, with no mention of the fast track process or startup winding up operations."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_81",
+          "chunk_index": 2,
+          "content_preview": "## Your profile details have been successfully recorded.\n\nYou may also consider getting Startup recognition, a process by which Department of Industrial Policy and Promotion recognizes you as a Startu",
+          "retrieval_score": 0.8207,
+          "context_relevance": 0.2,
+          "context_coverage": 0.0,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk discusses startup recognition benefits and application process but does not mention winding up operations or the fast track process."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_113",
+          "chunk_index": 3,
+          "content_preview": "*The provided image is a graphic design element or abstract illustration rather than a data chart or graph. It features a geometric composition of overlapping triangles and polygons in shades of orang",
+          "retrieval_score": 0.818,
+          "context_relevance": 0.0,
+          "context_coverage": 0.0,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk describes an abstract graphic design and contact information, containing no data about startup winding up processes or timelines."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_82",
+          "chunk_index": 4,
+          "content_preview": "*The provided image is a graphic design illustration or abstract geometric artwork rather than a data chart or graph. It features a stylized, low-poly composition consisting of sharp triangles and pol",
+          "retrieval_score": 0.8178,
+          "context_relevance": 0.0,
+          "context_coverage": 0.0,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk describes an abstract geometric artwork and provides contact information, but contains no actual data or process details related to startup winding up operations."
+        }
+      ],
+      "avg_context_relevance": 0.24,
+      "avg_context_coverage": 0.16,
+      "avg_faithfulness": 0.98,
+      "overall_score": 0.46,
+      "retrieval_verdict": "PARTIAL",
+      "evaluated_at": "2026-03-05T11:15:50.694222"
+    },
+    {
+      "query": "What exemptions are available for startups in public procurement?",
+      "user_id": "1",
+      "session_id": "1",
+      "total_chunks_retrieved": 5,
+      "chunk_scores": [
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_11",
+          "chunk_index": 0,
+          "content_preview": "*The image displays a stylized, orange line-art icon featuring three human figures. The figures are depicted from the chest up, wearing formal attire including collared shirts and neckties. The centra",
+          "retrieval_score": 0.8534,
+          "context_relevance": 0.8,
+          "context_coverage": 0.6,
+          "faithfulness": 0.9,
+          "judge_reasoning": "The chunk mentions relaxation in public procurement norms for startups but lacks details on specific exemption types beyond prior turnover."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_13",
+          "chunk_index": 1,
+          "content_preview": "*The image provided is a QR code, not a chart or graph. Therefore, there is no textual data or mathematical content to transcribe.*\n\nKnow more about public procurement, scan this QR code.\n\nDPIIT recog",
+          "retrieval_score": 0.8351,
+          "context_relevance": 0.8,
+          "context_coverage": 0.6,
+          "faithfulness": 0.9,
+          "judge_reasoning": "The chunk mentions startups being listed as sellers on GeM and becoming preferred bidders on CPPP portals, directly addressing procurement opportunities but lacks details on specific exemption policies or financial benefits."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_3",
+          "chunk_index": 2,
+          "content_preview": "## DPIIT-Recognised Startups are eligible for the following benefits:\n\nIntellectual Property Rights (IPR) benefits\n\nRelaxation in public procurements norms\n\nSelf-Certification under Labour & Environme",
+          "retrieval_score": 0.8197,
+          "context_relevance": 1.0,
+          "context_coverage": 0.8,
+          "faithfulness": 1.0,
+          "judge_reasoning": "Directly addresses public procurement exemptions for DPIIT-recognized startups with specific benefits listed."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_22",
+          "chunk_index": 3,
+          "content_preview": "## Tax Exemption for 3 years\n\nThe recognised Startups that are granted an Inter-Ministerial Board Certificate are exempted from income-tax for a period of 3 consecutive years out of 7 years since inco",
+          "retrieval_score": 0.8193,
+          "context_relevance": 0.6,
+          "context_coverage": 0.4,
+          "faithfulness": 0.9,
+          "judge_reasoning": "Mentions tax exemption for startups but focuses only on income tax and doesn't address broader public procurement exemptions."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_7",
+          "chunk_index": 4,
+          "content_preview": "• Panel of facilitators to assist in IP applications - Facilitators are responsible for providing\ngeneral advisory on different IPRs, and information on protecting and promoting IPRs in\nother countrie",
+          "retrieval_score": 0.8141,
+          "context_relevance": 0.8,
+          "context_coverage": 0.6,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk discusses fee rebates and facilitator support for startups in IP applications, which are relevant to startup exemptions but does not explicitly mention public procurement exemptions."
+        }
+      ],
+      "avg_context_relevance": 0.8,
+      "avg_context_coverage": 0.6,
+      "avg_faithfulness": 0.94,
+      "overall_score": 0.78,
+      "retrieval_verdict": "PASS",
+      "evaluated_at": "2026-03-05T11:15:58.797087"
+    },
+    {
+      "query": "What is the Government e-Marketplace and how can startups benefit from it?",
+      "user_id": "1",
+      "session_id": "1",
+      "total_chunks_retrieved": 5,
+      "chunk_scores": [
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_13",
+          "chunk_index": 0,
+          "content_preview": "*The image provided is a QR code, not a chart or graph. Therefore, there is no textual data or mathematical content to transcribe.*\n\nKnow more about public procurement, scan this QR code.\n\nDPIIT recog",
+          "retrieval_score": 0.87,
+          "context_relevance": 0.9,
+          "context_coverage": 0.8,
+          "faithfulness": 0.9,
+          "judge_reasoning": "Directly addresses GeM and startup benefits but lacks details on 'how' startups benefit beyond listing and preferred bidders."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_4",
+          "chunk_index": 1,
+          "content_preview": "## Resources\n\nLearning and Development Programs – Step-by-step guide to starting a business in India\n\nGovernment Schemes – Centralized repository of all Government schemes for the Startup Ecosystem Ac",
+          "retrieval_score": 0.8476,
+          "context_relevance": 0.8,
+          "context_coverage": 0.6,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk lists resources for startups but doesn't explicitly define the Government e-Marketplace or detail how startups specifically benefit from it beyond general support."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_75",
+          "chunk_index": 2,
+          "content_preview": "*The image is a composite of two screenshots, likely from a web application interface, rather than a data chart or graph. \n\n**Left Panel:** Displays the header \"#startupindia\" in white text against a ",
+          "retrieval_score": 0.8454,
+          "context_relevance": 0.6,
+          "context_coverage": 0.3,
+          "faithfulness": 0.8,
+          "judge_reasoning": "The chunk describes the Startup India platform's interface elements but does not explicitly explain GeM or how startups benefit from it."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_81",
+          "chunk_index": 3,
+          "content_preview": "## Your profile details have been successfully recorded.\n\nYou may also consider getting Startup recognition, a process by which Department of Industrial Policy and Promotion recognizes you as a Startu",
+          "retrieval_score": 0.8446,
+          "context_relevance": 0.8,
+          "context_coverage": 0.6,
+          "faithfulness": 0.9,
+          "judge_reasoning": "The chunk discusses startup recognition benefits including government procurement access but doesn't explicitly mention the Government e-Marketplace or how startups can directly benefit from it."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_7",
+          "chunk_index": 4,
+          "content_preview": "• Panel of facilitators to assist in IP applications - Facilitators are responsible for providing\ngeneral advisory on different IPRs, and information on protecting and promoting IPRs in\nother countrie",
+          "retrieval_score": 0.8397,
+          "context_relevance": 0.8,
+          "context_coverage": 0.6,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk discusses IPR support for startups but does not explicitly mention the Government e-Marketplace or its direct benefits."
+        }
+      ],
+      "avg_context_relevance": 0.78,
+      "avg_context_coverage": 0.58,
+      "avg_faithfulness": 0.92,
+      "overall_score": 0.76,
+      "retrieval_verdict": "PASS",
+      "evaluated_at": "2026-03-05T11:16:04.113050"
+    },
+    {
+      "query": "What pro bono services are available to startups on the Startup India portal?",
+      "user_id": "1",
+      "session_id": "1",
+      "total_chunks_retrieved": 5,
+      "chunk_scores": [
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_4",
+          "chunk_index": 0,
+          "content_preview": "## Resources\n\nLearning and Development Programs – Step-by-step guide to starting a business in India\n\nGovernment Schemes – Centralized repository of all Government schemes for the Startup Ecosystem Ac",
+          "retrieval_score": 0.8792,
+          "context_relevance": 1.0,
+          "context_coverage": 0.8,
+          "faithfulness": 1.0,
+          "judge_reasoning": "Directly lists pro bono services (legal, banking, cloud credits) but doesn't specify eligibility criteria or application process details."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_38",
+          "chunk_index": 1,
+          "content_preview": "## Pro Bono Services\n\nIn our endeavor to make starting up easy for Startups, we bring you the best of some relevant\nservices out there in the market, free of cost. We have collaborated with leading Co",
+          "retrieval_score": 0.8615,
+          "context_relevance": 1.0,
+          "context_coverage": 0.8,
+          "faithfulness": 1.0,
+          "judge_reasoning": "Directly addresses pro bono services for startups on Startup India, lists specific partners and services, but lacks details on how to access them beyond QR code scanning."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_29",
+          "chunk_index": 2,
+          "content_preview": "## Startup India Portal\n\nStartup India provides free resources to Startups to help them scale faster, better and stronger. Log on to our resources section to navigate your way through the competitive ",
+          "retrieval_score": 0.8517,
+          "context_relevance": 0.8,
+          "context_coverage": 0.6,
+          "faithfulness": 0.9,
+          "judge_reasoning": "Mentions free resources for startups but lacks specific details about pro bono services like legal/mentorship support."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_44",
+          "chunk_index": 3,
+          "content_preview": "## Programs and Challenges\n\nStartup India works with multiple corporates and Government departments to bridge the\ngap and build connections with Startups. Any industry or department can solve for thei",
+          "retrieval_score": 0.8503,
+          "context_relevance": 0.6,
+          "context_coverage": 0.4,
+          "faithfulness": 0.8,
+          "judge_reasoning": "Mentions mentorship and incubation/acceleration as incentives but doesn't explicitly list pro bono services like legal/financial aid or specify which services are directly available to startups on the portal."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_7",
+          "chunk_index": 4,
+          "content_preview": "• Panel of facilitators to assist in IP applications - Facilitators are responsible for providing\ngeneral advisory on different IPRs, and information on protecting and promoting IPRs in\nother countrie",
+          "retrieval_score": 0.8433,
+          "context_relevance": 0.9,
+          "context_coverage": 0.7,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk accurately describes two key pro bono services (IP facilitation and fee rebates) but does not mention other potential services like legal/technical mentoring or funding support that might be part of Startup India's offerings."
+        }
+      ],
+      "avg_context_relevance": 0.86,
+      "avg_context_coverage": 0.66,
+      "avg_faithfulness": 0.94,
+      "overall_score": 0.82,
+      "retrieval_verdict": "PASS",
+      "evaluated_at": "2026-03-05T11:16:08.908288"
+    },
+    {
+      "query": "Which companies offer free cloud credits to startups through Startup India?",
+      "user_id": "1",
+      "session_id": "1",
+      "total_chunks_retrieved": 5,
+      "chunk_scores": [
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_4",
+          "chunk_index": 0,
+          "content_preview": "## Resources\n\nLearning and Development Programs – Step-by-step guide to starting a business in India\n\nGovernment Schemes – Centralized repository of all Government schemes for the Startup Ecosystem Ac",
+          "retrieval_score": 0.8557,
+          "context_relevance": 0.8,
+          "context_coverage": 0.6,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk mentions 'free cloud credits' under Pro Bono Services but doesn't specify which companies provide them through Startup India."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_40",
+          "chunk_index": 1,
+          "content_preview": "*ZOHO*\n\nworth Cloud Credits\ndisbursed to Startups\n\n$2,230,000+\n\nVAKIL SEARCH\n\nworth benefits\ndisbursed to Startups\n\nINR 10,00,000+",
+          "retrieval_score": 0.8515,
+          "context_relevance": 0.9,
+          "context_coverage": 0.6,
+          "faithfulness": 0.8,
+          "judge_reasoning": "The chunk lists Zoho and Vakil Search with cloud credit/benefit amounts, directly addressing the query but lacking details like eligibility criteria or application process."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_38",
+          "chunk_index": 2,
+          "content_preview": "## Pro Bono Services\n\nIn our endeavor to make starting up easy for Startups, we bring you the best of some relevant\nservices out there in the market, free of cost. We have collaborated with leading Co",
+          "retrieval_score": 0.8506,
+          "context_relevance": 0.9,
+          "context_coverage": 0.8,
+          "faithfulness": 0.9,
+          "judge_reasoning": "The chunk mentions specific companies (e.g., AWS, Zoho) offering free cloud credits/telephony services under Startup India's pro bono program, directly addressing the query but omitting details like eligibility criteria or application process."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_29",
+          "chunk_index": 3,
+          "content_preview": "## Startup India Portal\n\nStartup India provides free resources to Startups to help them scale faster, better and stronger. Log on to our resources section to navigate your way through the competitive ",
+          "retrieval_score": 0.8435,
+          "context_relevance": 0.8,
+          "context_coverage": 0.6,
+          "faithfulness": 0.9,
+          "judge_reasoning": "Mentions free resources but doesn't specify cloud credits or list companies offering them."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_44",
+          "chunk_index": 4,
+          "content_preview": "## Programs and Challenges\n\nStartup India works with multiple corporates and Government departments to bridge the\ngap and build connections with Startups. Any industry or department can solve for thei",
+          "retrieval_score": 0.842,
+          "context_relevance": 0.3,
+          "context_coverage": 0.2,
+          "faithfulness": 0.9,
+          "judge_reasoning": "Mentions Startup India's collaboration with corporates for challenges and incentives but doesn't specify any companies offering free cloud credits."
+        }
+      ],
+      "avg_context_relevance": 0.74,
+      "avg_context_coverage": 0.56,
+      "avg_faithfulness": 0.9,
+      "overall_score": 0.7333,
+      "retrieval_verdict": "PASS",
+      "evaluated_at": "2026-03-05T11:16:13.990428"
+    },
+    {
+      "query": "What is the Startup India Hub and what resources does it offer?",
+      "user_id": "1",
+      "session_id": "1",
+      "total_chunks_retrieved": 5,
+      "chunk_scores": [
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_29",
+          "chunk_index": 0,
+          "content_preview": "## Startup India Portal\n\nStartup India provides free resources to Startups to help them scale faster, better and stronger. Log on to our resources section to navigate your way through the competitive ",
+          "retrieval_score": 0.8694,
+          "context_relevance": 0.9,
+          "context_coverage": 0.6,
+          "faithfulness": 0.8,
+          "judge_reasoning": "The chunk mentions Startup India's resources but lacks specifics about the Hub and some resource details."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_4",
+          "chunk_index": 1,
+          "content_preview": "## Resources\n\nLearning and Development Programs – Step-by-step guide to starting a business in India\n\nGovernment Schemes – Centralized repository of all Government schemes for the Startup Ecosystem Ac",
+          "retrieval_score": 0.8681,
+          "context_relevance": 1.0,
+          "context_coverage": 0.9,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk directly addresses the query by listing specific resources offered by Startup India Hub, covering most aspects of the question."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_65",
+          "chunk_index": 2,
+          "content_preview": "## International Bridges\n\nStartup India enables global market access and knowledge exchange for Indian Startups\nthrough bilateral government collaborations with Russia, Korea, Portugal, Japan, Netherl",
+          "retrieval_score": 0.8512,
+          "context_relevance": 0.8,
+          "context_coverage": 0.6,
+          "faithfulness": 0.9,
+          "judge_reasoning": "The chunk describes the Startup India Hub's international collaboration aspect and some resources but doesn't mention domestic resources or a complete overview of what the hub is."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_44",
+          "chunk_index": 3,
+          "content_preview": "## Programs and Challenges\n\nStartup India works with multiple corporates and Government departments to bridge the\ngap and build connections with Startups. Any industry or department can solve for thei",
+          "retrieval_score": 0.8494,
+          "context_relevance": 0.8,
+          "context_coverage": 0.6,
+          "faithfulness": 0.9,
+          "judge_reasoning": "The chunk discusses Startup India's collaboration with corporates and government departments to create innovation challenges and offers resources like market access, cash prizes, and mentorship, but it does not explicitly define what the Startup India Hub is."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_75",
+          "chunk_index": 4,
+          "content_preview": "*The image is a composite of two screenshots, likely from a web application interface, rather than a data chart or graph. \n\n**Left Panel:** Displays the header \"#startupindia\" in white text against a ",
+          "retrieval_score": 0.8412,
+          "context_relevance": 0.8,
+          "context_coverage": 0.3,
+          "faithfulness": 0.9,
+          "judge_reasoning": "Describes the Startup India Hub's interface elements and stakeholders but lacks details on specific resources offered."
+        }
+      ],
+      "avg_context_relevance": 0.86,
+      "avg_context_coverage": 0.6,
+      "avg_faithfulness": 0.9,
+      "overall_score": 0.7867,
+      "retrieval_verdict": "PASS",
+      "evaluated_at": "2026-03-05T11:16:18.860350"
+    },
+    {
+      "query": "What is the Upgrad program offered under Startup India?",
+      "user_id": "1",
+      "session_id": "1",
+      "total_chunks_retrieved": 5,
+      "chunk_scores": [
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_32",
+          "chunk_index": 0,
+          "content_preview": "## Learning and Development Program\n\nStart with an idea, end with a business plan!\n\nTo guide budding entrepreneurs through the journey of their Startup venture, Upgrad offers a\nfree, 4-week program on",
+          "retrieval_score": 0.8672,
+          "context_relevance": 0.9,
+          "context_coverage": 0.8,
+          "faithfulness": 0.95,
+          "judge_reasoning": "The chunk accurately describes Upgrad's 4-week entrepreneurship program under Startup India, including its duration, content, and certificate, but does not explicitly mention the program's name ('Upgrad') in the first sentence."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_34",
+          "chunk_index": 1,
+          "content_preview": "*The image provided is a QR code, not a text document. It consists of a square grid pattern of black and white modules used to encode data. To extract information, the QR code must be scanned.*\n\nPeopl",
+          "retrieval_score": 0.8668,
+          "context_relevance": 0.3,
+          "context_coverage": 0.1,
+          "faithfulness": 0.8,
+          "judge_reasoning": "The chunk mentions the Startup India scheme and QR code but does not provide specific details about the Upgrad program or its features."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_44",
+          "chunk_index": 2,
+          "content_preview": "## Programs and Challenges\n\nStartup India works with multiple corporates and Government departments to bridge the\ngap and build connections with Startups. Any industry or department can solve for thei",
+          "retrieval_score": 0.8302,
+          "context_relevance": 0.6,
+          "context_coverage": 0.3,
+          "faithfulness": 0.8,
+          "judge_reasoning": "Mentions Startup India's collaboration with corporates and general challenge structure but does not specifically describe the Upgrad program."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_29",
+          "chunk_index": 3,
+          "content_preview": "## Startup India Portal\n\nStartup India provides free resources to Startups to help them scale faster, better and stronger. Log on to our resources section to navigate your way through the competitive ",
+          "retrieval_score": 0.8106,
+          "context_relevance": 0.6,
+          "context_coverage": 0.3,
+          "faithfulness": 0.9,
+          "judge_reasoning": "Mentions Startup India's resources but doesn't specify the Upgrad program details."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_65",
+          "chunk_index": 4,
+          "content_preview": "## International Bridges\n\nStartup India enables global market access and knowledge exchange for Indian Startups\nthrough bilateral government collaborations with Russia, Korea, Portugal, Japan, Netherl",
+          "retrieval_score": 0.8097,
+          "context_relevance": 0.2,
+          "context_coverage": 0.1,
+          "faithfulness": 0.9,
+          "judge_reasoning": "The chunk discusses Startup Bridges under Startup India but does not mention the 'Upgrad program' specifically, making it tangentially relevant at best."
+        }
+      ],
+      "avg_context_relevance": 0.52,
+      "avg_context_coverage": 0.32,
+      "avg_faithfulness": 0.87,
+      "overall_score": 0.57,
+      "retrieval_verdict": "PARTIAL",
+      "evaluated_at": "2026-03-05T11:16:24.180044"
+    },
+    {
+      "query": "How can a startup apply for DPIIT recognition?",
+      "user_id": "1",
+      "session_id": "1",
+      "total_chunks_retrieved": 5,
+      "chunk_scores": [
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_71",
+          "chunk_index": 0,
+          "content_preview": "## Get DPIIT Recognised!\n\nStartups can apply to recognised by\nDepartment for Promotion of Industry and Internal Trade to\navail numerous benefits.\n\n22,000+\nStartups Recognised\n\nRead on to see how:",
+          "retrieval_score": 0.9054,
+          "context_relevance": 1.0,
+          "context_coverage": 0.5,
+          "faithfulness": 1.0,
+          "judge_reasoning": "Directly addresses DPIIT recognition application process for startups but lacks procedural details."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_3",
+          "chunk_index": 1,
+          "content_preview": "## DPIIT-Recognised Startups are eligible for the following benefits:\n\nIntellectual Property Rights (IPR) benefits\n\nRelaxation in public procurements norms\n\nSelf-Certification under Labour & Environme",
+          "retrieval_score": 0.8924,
+          "context_relevance": 0.8,
+          "context_coverage": 0.2,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk lists benefits of DPIIT recognition but does not explain the application process."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_81",
+          "chunk_index": 2,
+          "content_preview": "## Your profile details have been successfully recorded.\n\nYou may also consider getting Startup recognition, a process by which Department of Industrial Policy and Promotion recognizes you as a Startu",
+          "retrieval_score": 0.8733,
+          "context_relevance": 0.9,
+          "context_coverage": 0.8,
+          "faithfulness": 0.9,
+          "judge_reasoning": "The chunk directly addresses DPIIT (DIPP) startup recognition process, required details, and benefits, but lacks full step-by-step procedural clarity."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_23",
+          "chunk_index": 3,
+          "content_preview": "## Exemption for the purpose of clause (viib) of sub-section (2) of section 56 of the Act\n\n• A DPIIT recognized Startup is eligible for exemption from the provisions of section 56(2)(viib) of the Inco",
+          "retrieval_score": 0.8716,
+          "context_relevance": 0.6,
+          "context_coverage": 0.3,
+          "faithfulness": 0.8,
+          "judge_reasoning": "Mentions DPIIT recognition process but focuses on tax exemption declaration (Form 2 filing) rather than the full application procedure."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_13",
+          "chunk_index": 4,
+          "content_preview": "*The image provided is a QR code, not a chart or graph. Therefore, there is no textual data or mathematical content to transcribe.*\n\nKnow more about public procurement, scan this QR code.\n\nDPIIT recog",
+          "retrieval_score": 0.8677,
+          "context_relevance": 0.8,
+          "context_coverage": 0.6,
+          "faithfulness": 0.9,
+          "judge_reasoning": "The chunk mentions DPIIT recognition benefits (GeM listing, CPPP tenders) but focuses more on post-recognition opportunities than the application process itself."
+        }
+      ],
+      "avg_context_relevance": 0.82,
+      "avg_context_coverage": 0.48,
+      "avg_faithfulness": 0.92,
+      "overall_score": 0.74,
+      "retrieval_verdict": "PASS",
+      "evaluated_at": "2026-03-05T11:16:28.416757"
+    },
+    {
+      "query": "What documents are required for startup recognition application?",
+      "user_id": "1",
+      "session_id": "1",
+      "total_chunks_retrieved": 5,
+      "chunk_scores": [
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_108",
+          "chunk_index": 0,
+          "content_preview": "## What do you need?\n\nIncorporation/Registration Certificate\n\nDirector details\n\nProof of concept like pitch deck/website link/video (in case of a validation/\n\nearly traction/scaling stage startup) res",
+          "retrieval_score": 0.8447,
+          "context_relevance": 0.95,
+          "context_coverage": 0.8,
+          "faithfulness": 0.9,
+          "judge_reasoning": "The chunk lists key documents required for a startup recognition application, though it omits details like address proof or financial statements which might be part of a complete application."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_81",
+          "chunk_index": 1,
+          "content_preview": "## Your profile details have been successfully recorded.\n\nYou may also consider getting Startup recognition, a process by which Department of Industrial Policy and Promotion recognizes you as a Startu",
+          "retrieval_score": 0.8376,
+          "context_relevance": 0.9,
+          "context_coverage": 0.6,
+          "faithfulness": 0.8,
+          "judge_reasoning": "The chunk mentions the process and benefits of startup recognition but does not explicitly list all required documents beyond incorporation number and entity type."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_106",
+          "chunk_index": 2,
+          "content_preview": "*The image displays a digital screenshot of a \"STARTUP RECOGNITION FORM\" interface, likely from a web-based application. The form is titled \"Entity Details\" and is numbered \"1\". It contains several fi",
+          "retrieval_score": 0.8346,
+          "context_relevance": 0.8,
+          "context_coverage": 0.6,
+          "faithfulness": 0.9,
+          "judge_reasoning": "The chunk describes a startup recognition form interface but does not explicitly list all required documents, only form fields."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_86",
+          "chunk_index": 3,
+          "content_preview": "## Recognition Application Detail\n\nUser Details\n\nName\n\nCompany Name\n\nRecognition Form Status\n\nCurrent Status\n\nApplication",
+          "retrieval_score": 0.8315,
+          "context_relevance": 0.8,
+          "context_coverage": 0.3,
+          "faithfulness": 0.9,
+          "judge_reasoning": "The chunk mentions application status and form but lacks specific document requirements."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_6",
+          "chunk_index": 4,
+          "content_preview": "## Intellectual Property Rights (IPR)\n\nTo promote awareness and adoption of IPRs by Startups and facilitate them in protecting and commercialising the IPRs, Startup India provides access to high quali",
+          "retrieval_score": 0.8291,
+          "context_relevance": 0.2,
+          "context_coverage": 0.0,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk discusses IPR services but does not mention required documents for startup recognition application."
+        }
+      ],
+      "avg_context_relevance": 0.73,
+      "avg_context_coverage": 0.46,
+      "avg_faithfulness": 0.9,
+      "overall_score": 0.6967,
+      "retrieval_verdict": "PARTIAL",
+      "evaluated_at": "2026-03-05T11:16:33.267469"
+    },
+    {
+      "query": "What is Section 56(2)(viib) exemption for startups?",
+      "user_id": "1",
+      "session_id": "1",
+      "total_chunks_retrieved": 5,
+      "chunk_scores": [
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_23",
+          "chunk_index": 0,
+          "content_preview": "## Exemption for the purpose of clause (viib) of sub-section (2) of section 56 of the Act\n\n• A DPIIT recognized Startup is eligible for exemption from the provisions of section 56(2)(viib) of the Inco",
+          "retrieval_score": 0.9079,
+          "context_relevance": 1.0,
+          "context_coverage": 0.8,
+          "faithfulness": 1.0,
+          "judge_reasoning": "Directly addresses Section 56(2)(viib) exemption for DPIIT-recognized startups, including the requirement to file Form 2, but omits minor procedural details like the QR code reference."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_3",
+          "chunk_index": 1,
+          "content_preview": "## DPIIT-Recognised Startups are eligible for the following benefits:\n\nIntellectual Property Rights (IPR) benefits\n\nRelaxation in public procurements norms\n\nSelf-Certification under Labour & Environme",
+          "retrieval_score": 0.8413,
+          "context_relevance": 0.8,
+          "context_coverage": 0.6,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk lists benefits for DPIIT-recognized startups but only partially addresses Section 56(2)(viib) exemption (mentions Section 80 IAC instead)."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_20",
+          "chunk_index": 2,
+          "content_preview": "## Tax Exemption\n\nStartups incorporated on or after 1 $ ^{st} $  April 2016 can apply for income tax exemption. The Inter-Ministerial Board validates the innovative nature of the business for granting",
+          "retrieval_score": 0.8411,
+          "context_relevance": 0.8,
+          "context_coverage": 0.6,
+          "faithfulness": 0.9,
+          "judge_reasoning": "The chunk discusses tax exemptions for startups post-April 2016 and mentions the Inter-Ministerial Board's role but does not explicitly specify Section 56(2)(viib) or its exact provisions."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_22",
+          "chunk_index": 3,
+          "content_preview": "## Tax Exemption for 3 years\n\nThe recognised Startups that are granted an Inter-Ministerial Board Certificate are exempted from income-tax for a period of 3 consecutive years out of 7 years since inco",
+          "retrieval_score": 0.8383,
+          "context_relevance": 0.9,
+          "context_coverage": 0.7,
+          "faithfulness": 0.9,
+          "judge_reasoning": "Directly addresses Section 56(2)(viib) tax exemption for startups with accurate details on eligibility and duration, but omits specific exemption amount/conditions beyond the 3-year period."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_11",
+          "chunk_index": 4,
+          "content_preview": "*The image displays a stylized, orange line-art icon featuring three human figures. The figures are depicted from the chest up, wearing formal attire including collared shirts and neckties. The centra",
+          "retrieval_score": 0.8376,
+          "context_relevance": 0.6,
+          "context_coverage": 0.4,
+          "faithfulness": 0.8,
+          "judge_reasoning": "Mentions public procurement exemptions for startups but lacks specific details about Section 56(2)(viib)."
+        }
+      ],
+      "avg_context_relevance": 0.82,
+      "avg_context_coverage": 0.62,
+      "avg_faithfulness": 0.92,
+      "overall_score": 0.7867,
+      "retrieval_verdict": "PASS",
+      "evaluated_at": "2026-03-05T11:16:39.360989"
+    },
+    {
+      "query": "What international bridges does Startup India have and with which countries?",
+      "user_id": "1",
+      "session_id": "1",
+      "total_chunks_retrieved": 5,
+      "chunk_scores": [
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_65",
+          "chunk_index": 0,
+          "content_preview": "## International Bridges\n\nStartup India enables global market access and knowledge exchange for Indian Startups\nthrough bilateral government collaborations with Russia, Korea, Portugal, Japan, Netherl",
+          "retrieval_score": 0.9135,
+          "context_relevance": 1.0,
+          "context_coverage": 0.8,
+          "faithfulness": 1.0,
+          "judge_reasoning": "Directly addresses the query by listing partner countries and describing the nature of the bridges, though doesn't explicitly name specific bridge programs beyond the general 'Startup Bridge' reference."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_66",
+          "chunk_index": 1,
+          "content_preview": "Networking Opportunities: Enable connections among Startups, mentors, investors and incubators in relevant sectors from both countries\n\nHosting Joint Programs: From Startup Exchanges to Innovation Cha",
+          "retrieval_score": 0.8431,
+          "context_relevance": 0.8,
+          "context_coverage": 0.6,
+          "faithfulness": 0.9,
+          "judge_reasoning": "The chunk mentions international collaboration mechanisms (networking, joint programs, capacity building) but does not specify particular bridges or countries, leaving some query aspects unaddressed."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_44",
+          "chunk_index": 2,
+          "content_preview": "## Programs and Challenges\n\nStartup India works with multiple corporates and Government departments to bridge the\ngap and build connections with Startups. Any industry or department can solve for thei",
+          "retrieval_score": 0.841,
+          "context_relevance": 0.2,
+          "context_coverage": 0.0,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk discusses collaboration programs but does not mention any specific international bridges or partner countries."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_4",
+          "chunk_index": 3,
+          "content_preview": "## Resources\n\nLearning and Development Programs – Step-by-step guide to starting a business in India\n\nGovernment Schemes – Centralized repository of all Government schemes for the Startup Ecosystem Ac",
+          "retrieval_score": 0.8226,
+          "context_relevance": 0.2,
+          "context_coverage": 0.0,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk lists resources and programs under Startup India but does not mention any international bridges or country partnerships."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_75",
+          "chunk_index": 4,
+          "content_preview": "*The image is a composite of two screenshots, likely from a web application interface, rather than a data chart or graph. \n\n**Left Panel:** Displays the header \"#startupindia\" in white text against a ",
+          "retrieval_score": 0.8214,
+          "context_relevance": 0.2,
+          "context_coverage": 0.0,
+          "faithfulness": 0.8,
+          "judge_reasoning": "The chunk describes the Startup India platform's interface elements but does not mention any international bridges or partner countries."
+        }
+      ],
+      "avg_context_relevance": 0.48,
+      "avg_context_coverage": 0.28,
+      "avg_faithfulness": 0.94,
+      "overall_score": 0.5667,
+      "retrieval_verdict": "PARTIAL",
+      "evaluated_at": "2026-03-05T11:16:45.407128"
+    },
+    {
+      "query": "What is the difference between an incubator and an accelerator?",
+      "user_id": "1",
+      "session_id": "1",
+      "total_chunks_retrieved": 5,
+      "chunk_scores": [
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_114",
+          "chunk_index": 0,
+          "content_preview": "---\n\nGlossary\n\nAccelerator: An accelerator is typically a 3-4 month program for Startups at early traction and scaling stage. It is a process of intense, rapid and immersive education aimed at acceler",
+          "retrieval_score": 0.8504,
+          "context_relevance": 0.5,
+          "context_coverage": 0.3,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk defines accelerators and related terms but does not mention incubators, limiting coverage of the query's core comparison."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_115",
+          "chunk_index": 1,
+          "content_preview": "Convertible Note: It is a loan where an investor provides cash to a Startup company, and the investor gets an option to convert the debt to equity in the company.\n\nCo-Working Space: A co-working space",
+          "retrieval_score": 0.8236,
+          "context_relevance": 0.6,
+          "context_coverage": 0.5,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk defines incubators but omits accelerators, only partially addressing the query's request for differences."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_79",
+          "chunk_index": 2,
+          "content_preview": "established business.\" A \"Individual\" card (pink icon with a person) describing someone \"Aspiring entrepreneur, Regular freelancer.\" A \"Enabler\" card (purple icon with a house) describing someone \"Hel",
+          "retrieval_score": 0.8088,
+          "context_relevance": 0.2,
+          "context_coverage": 0.0,
+          "faithfulness": 0.8,
+          "judge_reasoning": "The chunk describes user roles in a startup ecosystem but does not address the difference between incubators and accelerators."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_84",
+          "chunk_index": 3,
+          "content_preview": "2.  **Top Right (Active/Upcoming Programs):** A white section titled \"Active/Upcoming Programs\" lists two items. The first is a yellow graphic for \"SUVNIK INCUBATION 20...\" with a date of \"30 SEP 2019",
+          "retrieval_score": 0.8052,
+          "context_relevance": 0.2,
+          "context_coverage": 0.0,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk describes specific programs (incubator and a challenge) but doesn't explain the general difference between incubators and accelerators."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_67",
+          "chunk_index": 4,
+          "content_preview": "*The image provided is a QR code, not a text document. Therefore, there is no text to transcribe.*\n\nFor any queries please call us on 1800115565 or drop us an email at dipp-startups@nic.in\n\n---",
+          "retrieval_score": 0.7947,
+          "context_relevance": 0.0,
+          "context_coverage": 0.0,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk contains no substantive information about incubators/accelerators and only provides contact details."
+        }
+      ],
+      "avg_context_relevance": 0.3,
+      "avg_context_coverage": 0.16,
+      "avg_faithfulness": 0.96,
+      "overall_score": 0.4733,
+      "retrieval_verdict": "PARTIAL",
+      "evaluated_at": "2026-03-05T11:16:50.618185"
+    },
+    {
+      "query": "What is seed funding and how is it different from Series A funding?",
+      "user_id": "1",
+      "session_id": "1",
+      "total_chunks_retrieved": 5,
+      "chunk_scores": [
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_121",
+          "chunk_index": 0,
+          "content_preview": "## Seed\n\nProduct/Service\nlaunched in Market\n\nFund Sources: Angel Investors, Pitching Competitions, Collateral-Free Debt",
+          "retrieval_score": 0.8467,
+          "context_relevance": 0.6,
+          "context_coverage": 0.4,
+          "faithfulness": 0.8,
+          "judge_reasoning": "Mentions seed funding sources but lacks clear differentiation from Series A and omits key aspects like stage of development."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_116",
+          "chunk_index": 1,
+          "content_preview": "IPR: The right of a person or a company to exclusively use its own plans, ideas, or other intangible assets without the worry of competition, at least for a specific period of time. These rights can i",
+          "retrieval_score": 0.8339,
+          "context_relevance": 0.6,
+          "context_coverage": 0.5,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk defines seed funding but does not explain how it differs from Series A funding, and the included IPR and product crowdfunding sections are irrelevant to the query."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_127",
+          "chunk_index": 2,
+          "content_preview": "## Pre-Seed\n\nWorking on\nIdea/Prototype\n\nFund Sources: Family,\nFriends, Grants, B-Plan\nCompetitions,\nCollateral-Free Debt",
+          "retrieval_score": 0.8226,
+          "context_relevance": 0.6,
+          "context_coverage": 0.3,
+          "faithfulness": 0.8,
+          "judge_reasoning": "Mentions pre-seed funding sources but doesn't explicitly define seed funding or contrast it with Series A."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_125",
+          "chunk_index": 3,
+          "content_preview": "## Series A\n\nProduct/Service\nGaining Market Traction\n\nFund Sources: Venture\nFunds, Bank Loan",
+          "retrieval_score": 0.8177,
+          "context_relevance": 0.6,
+          "context_coverage": 0.3,
+          "faithfulness": 0.8,
+          "judge_reasoning": "Mentions Series A and fund sources but lacks seed funding details and clear differentiation."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_114",
+          "chunk_index": 4,
+          "content_preview": "---\n\nGlossary\n\nAccelerator: An accelerator is typically a 3-4 month program for Startups at early traction and scaling stage. It is a process of intense, rapid and immersive education aimed at acceler",
+          "retrieval_score": 0.8147,
+          "context_relevance": 0.6,
+          "context_coverage": 0.3,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk defines angel rounds and mentions seed/Series A in passing but doesn't explain seed funding or its distinction from Series A."
+        }
+      ],
+      "avg_context_relevance": 0.6,
+      "avg_context_coverage": 0.36,
+      "avg_faithfulness": 0.88,
+      "overall_score": 0.6133,
+      "retrieval_verdict": "PARTIAL",
+      "evaluated_at": "2026-03-05T11:16:55.142546"
+    },
+    {
+      "query": "What is a convertible note in startup funding?",
+      "user_id": "1",
+      "session_id": "1",
+      "total_chunks_retrieved": 5,
+      "chunk_scores": [
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_115",
+          "chunk_index": 0,
+          "content_preview": "Convertible Note: It is a loan where an investor provides cash to a Startup company, and the investor gets an option to convert the debt to equity in the company.\n\nCo-Working Space: A co-working space",
+          "retrieval_score": 0.8254,
+          "context_relevance": 0.33,
+          "context_coverage": 0.33,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk defines convertible notes but includes unrelated information about co-working spaces and incubators, diluting relevance and coverage."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_67",
+          "chunk_index": 1,
+          "content_preview": "*The image provided is a QR code, not a text document. Therefore, there is no text to transcribe.*\n\nFor any queries please call us on 1800115565 or drop us an email at dipp-startups@nic.in\n\n---",
+          "retrieval_score": 0.8075,
+          "context_relevance": 0.0,
+          "context_coverage": 0.0,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk contains only contact information and a note about a QR code, with no explanation of convertible notes in startup funding."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_24",
+          "chunk_index": 2,
+          "content_preview": "*There is a QR code in the image.*\n\nFor any queries please call us on 1800115565 or drop us an email at dipp-startups@nic.in\n\n---\n\nFund of Funds for Startups\n\nTo provide equity funding support for dev",
+          "retrieval_score": 0.8065,
+          "context_relevance": 0.1,
+          "context_coverage": 0.0,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk discusses a government fund structure but does not mention convertible notes or address the query's topic."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_68",
+          "chunk_index": 3,
+          "content_preview": "## What is a Startup?\n\nAn entity shall be considered as a Startup:\n\nIf it is incorporated as a private limited company (as defined in the Companies Act, 2013) or registered as a partnership firm (unde",
+          "retrieval_score": 0.7995,
+          "context_relevance": 0.2,
+          "context_coverage": 0.0,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk defines a startup but does not mention convertible notes."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_26",
+          "chunk_index": 4,
+          "content_preview": "*The image displays a stylized, orange icon representing a stack of papers or documents. It is not a data chart, graph, or plot. The icon features a thick orange outline of a rectangular stack with ro",
+          "retrieval_score": 0.7976,
+          "context_relevance": 0.0,
+          "context_coverage": 0.0,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk describes an image of a document stack and financial figures but does not explain what a convertible note is."
+        }
+      ],
+      "avg_context_relevance": 0.126,
+      "avg_context_coverage": 0.066,
+      "avg_faithfulness": 1.0,
+      "overall_score": 0.3973,
+      "retrieval_verdict": "FAIL",
+      "evaluated_at": "2026-03-05T11:16:59.533551"
+    },
+    {
+      "query": "How does the Fund of Funds flow from Government to startups?",
+      "user_id": "1",
+      "session_id": "1",
+      "total_chunks_retrieved": 5,
+      "chunk_scores": [
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_24",
+          "chunk_index": 0,
+          "content_preview": "*There is a QR code in the image.*\n\nFor any queries please call us on 1800115565 or drop us an email at dipp-startups@nic.in\n\n---\n\nFund of Funds for Startups\n\nTo provide equity funding support for dev",
+          "retrieval_score": 0.8751,
+          "context_relevance": 0.9,
+          "context_coverage": 0.8,
+          "faithfulness": 0.9,
+          "judge_reasoning": "The chunk directly addresses the Fund of Funds structure and flow from Government to startups, though it cuts off at 'flow of funds' without fully explaining the mechanism."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_75",
+          "chunk_index": 1,
+          "content_preview": "*The image is a composite of two screenshots, likely from a web application interface, rather than a data chart or graph. \n\n**Left Panel:** Displays the header \"#startupindia\" in white text against a ",
+          "retrieval_score": 0.8391,
+          "context_relevance": 0.2,
+          "context_coverage": 0.0,
+          "faithfulness": 0.8,
+          "judge_reasoning": "The chunk describes a web interface for Startup India but does not explain the Fund of Funds flow mechanism or financial processes."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_7",
+          "chunk_index": 2,
+          "content_preview": "• Panel of facilitators to assist in IP applications - Facilitators are responsible for providing\ngeneral advisory on different IPRs, and information on protecting and promoting IPRs in\nother countrie",
+          "retrieval_score": 0.8386,
+          "context_relevance": 0.2,
+          "context_coverage": 0.1,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk discusses IPR support mechanisms but does not address the Fund of Funds flow from Government to startups."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_73",
+          "chunk_index": 3,
+          "content_preview": "It shows a tweet from \"Startup India\" discussing funding from Japanese entities. Below the feed is a thumbnail image of a handshake. The top of the image contains a navigation bar with links like \"ABO",
+          "retrieval_score": 0.8338,
+          "context_relevance": 0.2,
+          "context_coverage": 0.1,
+          "faithfulness": 0.8,
+          "judge_reasoning": "The chunk describes a tweet and image interface but provides no actual information about the Fund of Funds flow mechanism between the Government and startups."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_121",
+          "chunk_index": 4,
+          "content_preview": "## Seed\n\nProduct/Service\nlaunched in Market\n\nFund Sources: Angel Investors, Pitching Competitions, Collateral-Free Debt",
+          "retrieval_score": 0.8318,
+          "context_relevance": 0.3,
+          "context_coverage": 0.2,
+          "faithfulness": 0.8,
+          "judge_reasoning": "Mentions fund sources but focuses on product launch rather than government-to-startup flow."
+        }
+      ],
+      "avg_context_relevance": 0.36,
+      "avg_context_coverage": 0.24,
+      "avg_faithfulness": 0.86,
+      "overall_score": 0.4867,
+      "retrieval_verdict": "PARTIAL",
+      "evaluated_at": "2026-03-05T11:17:10.589635"
+    },
+    {
+      "query": "What is the turnover limit for a startup to remain eligible under Startup India?",
+      "user_id": "1",
+      "session_id": "1",
+      "total_chunks_retrieved": 5,
+      "chunk_scores": [
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_68",
+          "chunk_index": 0,
+          "content_preview": "## What is a Startup?\n\nAn entity shall be considered as a Startup:\n\nIf it is incorporated as a private limited company (as defined in the Companies Act, 2013) or registered as a partnership firm (unde",
+          "retrieval_score": 0.8594,
+          "context_relevance": 0.8,
+          "context_coverage": 0.6,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk defines startup eligibility criteria, including the turnover limit (INR 100 Crore) and time frame (up to 10 years), directly addressing part of the query but not explicitly mentioning 'turnover limit' as the primary focus."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_67",
+          "chunk_index": 1,
+          "content_preview": "*The image provided is a QR code, not a text document. Therefore, there is no text to transcribe.*\n\nFor any queries please call us on 1800115565 or drop us an email at dipp-startups@nic.in\n\n---",
+          "retrieval_score": 0.8393,
+          "context_relevance": 0.0,
+          "context_coverage": 0.0,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk contains only contact information and a note about a QR code, with no mention of turnover limits or Startup India eligibility criteria."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_18",
+          "chunk_index": 2,
+          "content_preview": "## Faster Exit for Startups\n\nMinistry of Corporate Affairs has notified Startups as ‘fast track firms’ enabling them to wind up operations within 90 days vis-a-vis 180 days for other companies. An ins",
+          "retrieval_score": 0.8335,
+          "context_relevance": 0.2,
+          "context_coverage": 0.0,
+          "faithfulness": 0.9,
+          "judge_reasoning": "The chunk discusses winding-up timelines for startups but does not mention turnover limits for Startup India eligibility."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_7",
+          "chunk_index": 3,
+          "content_preview": "• Panel of facilitators to assist in IP applications - Facilitators are responsible for providing\ngeneral advisory on different IPRs, and information on protecting and promoting IPRs in\nother countrie",
+          "retrieval_score": 0.8321,
+          "context_relevance": 0.0,
+          "context_coverage": 0.0,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk discusses IP application assistance and fee rebates but does not mention turnover limits for Startup India eligibility."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_82",
+          "chunk_index": 4,
+          "content_preview": "*The provided image is a graphic design illustration or abstract geometric artwork rather than a data chart or graph. It features a stylized, low-poly composition consisting of sharp triangles and pol",
+          "retrieval_score": 0.8299,
+          "context_relevance": 0.0,
+          "context_coverage": 0.0,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk describes an abstract graphic design and contact details, containing no information about startup turnover limits under Startup India."
+        }
+      ],
+      "avg_context_relevance": 0.2,
+      "avg_context_coverage": 0.12,
+      "avg_faithfulness": 0.98,
+      "overall_score": 0.4333,
+      "retrieval_verdict": "PARTIAL",
+      "evaluated_at": "2026-03-05T11:17:15.225358"
+    },
+    {
+      "query": "For how many years from incorporation is an entity considered a startup?",
+      "user_id": "1",
+      "session_id": "1",
+      "total_chunks_retrieved": 5,
+      "chunk_scores": [
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_68",
+          "chunk_index": 0,
+          "content_preview": "## What is a Startup?\n\nAn entity shall be considered as a Startup:\n\nIf it is incorporated as a private limited company (as defined in the Companies Act, 2013) or registered as a partnership firm (unde",
+          "retrieval_score": 0.8669,
+          "context_relevance": 1.0,
+          "context_coverage": 0.8,
+          "faithfulness": 1.0,
+          "judge_reasoning": "Directly addresses the definition and time frame (up to 10 years) for an entity to be considered a startup in India, though it includes additional criteria beyond the query's scope."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_22",
+          "chunk_index": 1,
+          "content_preview": "## Tax Exemption for 3 years\n\nThe recognised Startups that are granted an Inter-Ministerial Board Certificate are exempted from income-tax for a period of 3 consecutive years out of 7 years since inco",
+          "retrieval_score": 0.8508,
+          "context_relevance": 0.8,
+          "context_coverage": 0.6,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk mentions tax exemption duration (3 years within 7 years since incorporation) but doesn't explicitly state the general definition period for being considered a startup."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_18",
+          "chunk_index": 2,
+          "content_preview": "## Faster Exit for Startups\n\nMinistry of Corporate Affairs has notified Startups as ‘fast track firms’ enabling them to wind up operations within 90 days vis-a-vis 180 days for other companies. An ins",
+          "retrieval_score": 0.8308,
+          "context_relevance": 0.2,
+          "context_coverage": 0.0,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk discusses winding-up processes for startups but does not address the definition or timeframe for being considered a startup post-incorporation."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_69",
+          "chunk_index": 3,
+          "content_preview": "Provided that any such entity formed by splitting up or reconstruction of a business already in existence shall not be considered a 'Startup'.\n\nVisit: www.startupindia.gov.in",
+          "retrieval_score": 0.8288,
+          "context_relevance": 0.2,
+          "context_coverage": 0.0,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk addresses eligibility criteria for startups but does not mention the duration from incorporation."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_14",
+          "chunk_index": 4,
+          "content_preview": "## Self-Certification under Labour & Environment Laws\n\nTo reduce the regulatory burden on Startups, thereby allowing them to focus on their core\nbusiness & keep compliance costs low.\n\nStartups are all",
+          "retrieval_score": 0.8191,
+          "context_relevance": 0.8,
+          "context_coverage": 0.6,
+          "faithfulness": 0.9,
+          "judge_reasoning": "The chunk mentions the 3-5 year period for self-certification under Labour and Environment laws but focuses more on compliance exemptions than directly answering the exact duration for startup classification."
+        }
+      ],
+      "avg_context_relevance": 0.6,
+      "avg_context_coverage": 0.4,
+      "avg_faithfulness": 0.98,
+      "overall_score": 0.66,
+      "retrieval_verdict": "PARTIAL",
+      "evaluated_at": "2026-03-05T11:17:19.366918"
+    },
+    {
+      "query": "What are the IPR benefits available to DPIIT recognised startups?",
+      "user_id": "1",
+      "session_id": "1",
+      "total_chunks_retrieved": 5,
+      "chunk_scores": [
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_3",
+          "chunk_index": 0,
+          "content_preview": "## DPIIT-Recognised Startups are eligible for the following benefits:\n\nIntellectual Property Rights (IPR) benefits\n\nRelaxation in public procurements norms\n\nSelf-Certification under Labour & Environme",
+          "retrieval_score": 0.9227,
+          "context_relevance": 1.0,
+          "context_coverage": 0.8,
+          "faithfulness": 1.0,
+          "judge_reasoning": "Directly addresses IPR benefits but misses details on patent fee concessions or specific IPR schemes beyond tax exemptions."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_71",
+          "chunk_index": 1,
+          "content_preview": "## Get DPIIT Recognised!\n\nStartups can apply to recognised by\nDepartment for Promotion of Industry and Internal Trade to\navail numerous benefits.\n\n22,000+\nStartups Recognised\n\nRead on to see how:",
+          "retrieval_score": 0.877,
+          "context_relevance": 0.8,
+          "context_coverage": 0.2,
+          "faithfulness": 0.9,
+          "judge_reasoning": "The chunk mentions DPIIT recognition and hints at benefits but lacks specific IPR-related details."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_6",
+          "chunk_index": 2,
+          "content_preview": "## Intellectual Property Rights (IPR)\n\nTo promote awareness and adoption of IPRs by Startups and facilitate them in protecting and commercialising the IPRs, Startup India provides access to high quali",
+          "retrieval_score": 0.8683,
+          "context_relevance": 1.0,
+          "context_coverage": 0.5,
+          "faithfulness": 1.0,
+          "judge_reasoning": "Directly addresses IPR benefits for DPIIT startups but only covers patent fast-tracking, not other potential benefits like trademarks or design rights."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_13",
+          "chunk_index": 3,
+          "content_preview": "*The image provided is a QR code, not a chart or graph. Therefore, there is no textual data or mathematical content to transcribe.*\n\nKnow more about public procurement, scan this QR code.\n\nDPIIT recog",
+          "retrieval_score": 0.8556,
+          "context_relevance": 0.8,
+          "context_coverage": 0.6,
+          "faithfulness": 0.9,
+          "judge_reasoning": "The chunk mentions DPIIT startups' access to GeM and CPPP portals for procurement opportunities, directly addressing IPR benefits related to government procurement."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_7",
+          "chunk_index": 4,
+          "content_preview": "• Panel of facilitators to assist in IP applications - Facilitators are responsible for providing\ngeneral advisory on different IPRs, and information on protecting and promoting IPRs in\nother countrie",
+          "retrieval_score": 0.8503,
+          "context_relevance": 1.0,
+          "context_coverage": 0.8,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk directly addresses IPR benefits (rebates and facilitator support) for DPIIT startups, covering patents and trademarks but omitting other IP types like designs."
+        }
+      ],
+      "avg_context_relevance": 0.92,
+      "avg_context_coverage": 0.58,
+      "avg_faithfulness": 0.96,
+      "overall_score": 0.82,
+      "retrieval_verdict": "PASS",
+      "evaluated_at": "2026-03-05T11:17:24.281265"
+    },
+    {
+      "query": "How many IPR facilitators are available under the Startup India program?",
+      "user_id": "1",
+      "session_id": "1",
+      "total_chunks_retrieved": 5,
+      "chunk_scores": [
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_7",
+          "chunk_index": 0,
+          "content_preview": "• Panel of facilitators to assist in IP applications - Facilitators are responsible for providing\ngeneral advisory on different IPRs, and information on protecting and promoting IPRs in\nother countrie",
+          "retrieval_score": 0.8553,
+          "context_relevance": 0.6,
+          "context_coverage": 0.3,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk mentions IPR facilitators' role and rebates but does not specify the exact number of available facilitators."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_11",
+          "chunk_index": 1,
+          "content_preview": "*The image displays a stylized, orange line-art icon featuring three human figures. The figures are depicted from the chest up, wearing formal attire including collared shirts and neckties. The centra",
+          "retrieval_score": 0.8374,
+          "context_relevance": 0.8,
+          "context_coverage": 0.6,
+          "faithfulness": 0.9,
+          "judge_reasoning": "The chunk mentions '4000+ IPR Facilitators' directly related to the query but lacks explicit confirmation of the total number under Startup India, slightly reducing coverage."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_6",
+          "chunk_index": 2,
+          "content_preview": "## Intellectual Property Rights (IPR)\n\nTo promote awareness and adoption of IPRs by Startups and facilitate them in protecting and commercialising the IPRs, Startup India provides access to high quali",
+          "retrieval_score": 0.8373,
+          "context_relevance": 0.8,
+          "context_coverage": 0.6,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk discusses IPR support mechanisms under Startup India but does not explicitly state the number of available facilitators."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_8",
+          "chunk_index": 3,
+          "content_preview": "Want to protect your innovative idea? Scan the QR code below\nto contact the IPR facilitators.",
+          "retrieval_score": 0.8321,
+          "context_relevance": 0.8,
+          "context_coverage": 0.2,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk mentions IPR facilitators but does not provide the quantity requested in the query."
+        },
+        {
+          "chunk_id": "cb9ced74-4c20-4be6-94fe-c025ca10a262_4",
+          "chunk_index": 4,
+          "content_preview": "## Resources\n\nLearning and Development Programs – Step-by-step guide to starting a business in India\n\nGovernment Schemes – Centralized repository of all Government schemes for the Startup Ecosystem Ac",
+          "retrieval_score": 0.8125,
+          "context_relevance": 0.2,
+          "context_coverage": 0.0,
+          "faithfulness": 1.0,
+          "judge_reasoning": "The chunk lists resources but does not mention IPR facilitators or their numbers."
+        }
+      ],
+      "avg_context_relevance": 0.64,
+      "avg_context_coverage": 0.34,
+      "avg_faithfulness": 0.98,
+      "overall_score": 0.6533,
+      "retrieval_verdict": "PARTIAL",
+      "evaluated_at": "2026-03-05T11:17:28.778255"
+    }
+  ],
+  "generated_at": "2026-03-05T11:17:28.778406"
+}
