@@ -1,13 +1,17 @@
 # ===================================================================================
 # Project: VoiceRAG
 # File: src/services/chunker/text_chunker.py
-# Description: Splits text documents into smaller chunks for better processing.
+# Description: Splits text documents into smaller chunks for better processing (Marked Redundant)
 # Author: LALAN KUMAR
 # Created: [02-03-2026]
 # Updated: [04-03-2026]
 # LAST MODIFIED BY: LALAN KUMAR  [https://github.com/kumar8074]
 # Version: 1.0.0
 # ===================================================================================
+
+# No Longer Needed. 
+# Logic is Now Handled by `src/services/document_intelligence/md_chunker.py` 
+# for document intelligence capabilities
 
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.documents import Document

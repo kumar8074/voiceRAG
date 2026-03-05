@@ -4,7 +4,7 @@
 # Description: File upload router 
 # Author: LALAN KUMAR
 # Created: [02-03-2026]
-# Updated: [04-03-2026]
+# Updated: [05-03-2026]
 # LAST MODIFIED BY: LALAN KUMAR  [https://github.com/kumar8074]
 # Version: 1.0.0
 # ===================================================================================
@@ -15,7 +15,7 @@ import aiofiles
 import os
 from uuid import uuid4
 
-from ..services.indexing.indexer import QdrantIndexer
+from ..services.indexing.doc_intel_indexer import DocIntelIndexer
 from ..logger import logging
 
 router = APIRouter(prefix="/api/v1", tags=["file_upload"])
@@ -25,35 +25,38 @@ MAX_FILES = 3
 MAX_FILE_SIZE = 50*1024*1024  # 50 MB
 
 # Singleton indexer — reuses shared Qdrant + embedding singletons
-_indexer = QdrantIndexer()
+_indexer = DocIntelIndexer()
 
 _jobs: dict = {} # In memory job status
 
-async def _run_indexing(job_id: str, files_to_index: list[dict], user_id: str, session_id: str):
+async def _run_indexing(
+    job_id: str, 
+    files_to_index: list[dict], 
+    user_id: str, 
+    session_id: str
+    ):
     """
-    Background task: index all uploaded files, update job status when done.
+    Background task: fans all uploaded PDFs out to Sarvam DI concurrently,
+    then chunks → embeds → upserts each one. Updates job status when done.
+
     files_to_index: list of { file_path, original_name }
     """
     try:
-        doc_ids=[]
-        for f in files_to_index:
-            logging.info(f"Indexing {f['original_name']} for user={user_id}")
-            result=await _indexer.index_pdf(
-                file_path=f["file_path"],
-                user_id=user_id,
-                session_id=session_id,
-                language="auto"
-            )
-            doc_ids.append({
-                "doc_id": result["doc_id"],
-                "filename": f["original_name"]
-            })
-            logging.info(f"Indexed {f['original_name']}, doc_id={result['doc_id']}")
+        results = await _indexer.index_many(
+            files=files_to_index,
+            user_id=user_id,
+            session_id=session_id,
+        )
+
+        doc_ids = [
+            {"doc_id": r["doc_id"], "filename": r["filename"]}
+            for r in results
+        ]
 
         _jobs[job_id] = {
-            "status": "done", 
+            "status": "done",
             "detail": "All files indexed successfully.",
-            "docs": doc_ids
+            "docs": doc_ids,
         }
         logging.info(f"Job {job_id} complete: {doc_ids}")
 
@@ -106,12 +109,12 @@ async def upload_files(
         saved_files.append(filename)
         files_to_index.append({"file_path": file_path, "original_name": filename})
         
-        job_id = str(uuid4())
-        _jobs[job_id] = {"status": "indexing", "detail": "Indexing in progress...", "docs":[]} 
+    job_id = str(uuid4())
+    _jobs[job_id] = {"status": "indexing", "detail": "Indexing in progress...", "docs":[]} 
         
-        # Kick off indexing in the background — upload response returns immediately
-        background_tasks.add_task(_run_indexing, job_id, files_to_index, user_id, session_id)
-        logging.info(f"Upload complete, indexing job {job_id} started for user={user_id}")
+    # Kick off indexing in the background — upload response returns immediately
+    background_tasks.add_task(_run_indexing, job_id, files_to_index, user_id, session_id)
+    logging.info(f"Upload complete, indexing job {job_id} started for user={user_id}")
     
     return {
         "job_id": job_id,

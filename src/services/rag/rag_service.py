@@ -9,7 +9,11 @@
 # Version: 1.0.0
 # ===================================================================================
 
+# Replaced (Agentic RAG in use)
+
 import re
+import os
+from dotenv import load_dotenv
 import asyncio
 from typing import AsyncGenerator, List, Dict
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -21,6 +25,13 @@ from ...logger import logging
 from ..search.search_service import SearchService
 from .conversation_store import ConversationStore
 from .prompt_builder import PromptBuilder
+from .prompts import INTENT_CLASSIFIER_SYSTEM, GENERAL_SYSTEM_PROMPT
+
+load_dotenv()
+
+os.environ["LANGSMITH_TRACING"] = os.getenv("LANGSMITH_TRACING", "false")
+os.environ["LANGSMITH_API_KEY"] = os.getenv("LANGSMITH_API_KEY", "")
+os.environ["LANGSMITH_PROJECT"] = os.getenv("LANGSMITH_PROJECT", "voicerag")
 
 GENERAL_PATTERNS = re.compile(
     r"""
@@ -53,16 +64,6 @@ GENERAL_PATTERNS = re.compile(
     """,
     re.VERBOSE | re.IGNORECASE
 )
-
-INTENT_CLASSIFIER_SYSTEM = """You are an intent classifier.
-Reply with ONLY a single digit — no explanation, no punctuation, nothing else:
-0 = general conversation (greetings, small talk, chit-chat, how are you, thanks, bye, casual messages in ANY language or mix of languages)
-1 = needs document search (questions about specific topics, documents, facts, data, information requests in ANY language)"""
-
-GENERAL_SYSTEM_PROMPT = """You are a friendly, helpful voice assistant.
-Respond naturally and concisely.
-Respond in the SAME language as the user's message.
-"""
 
 class RAGService:
     """

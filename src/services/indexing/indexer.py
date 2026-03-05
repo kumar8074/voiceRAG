@@ -1,13 +1,16 @@
 # ===================================================================================
 # Project: VoiceRAG
 # File: src/services/indexing/indexer.py
-# Description: Indexing pipeline (Parse → Chunk → Embed → Qdrant)
+# Description: Indexing pipeline (Parse → Chunk → Embed → Qdrant) (Marked Redundant)
 # Author: LALAN KUMAR
 # Created: [04-03-2026]
 # Updated: [04-03-2026]
 # LAST MODIFIED BY: LALAN KUMAR  [https://github.com/kumar8074]
 # Version: 1.0.0
 # ===================================================================================
+
+# No Longer Needed. Logic is handled by `src/services/indexing/doc_intel_indexer.py`
+# For Document intelligence capabilities
 
 from uuid import uuid4, uuid5, NAMESPACE_DNS
 from typing import List, Dict, Any

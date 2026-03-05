@@ -14,7 +14,7 @@ from fastapi.responses import StreamingResponse
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from ..dependencies import get_db_session
-from ..services.rag.rag_service import RAGService
+from ..services.rag.agentic_rag import RAGService
 from ..logger import logging
 from ..schemas.api.request_response import ChatRequest
 

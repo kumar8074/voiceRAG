@@ -4,7 +4,7 @@
 # Description: Centralized configuration management
 # Author: LALAN KUMAR
 # Created: [02-03-2026]
-# Updated: [04-03-2026]
+# Updated: [05-03-2026]
 # LAST MODIFIED BY: LALAN KUMAR  [https://github.com/kumar8074]
 # Version: 1.0.0
 # ===================================================================================
@@ -27,6 +27,9 @@ os.environ["POSTGRES_PORT"]=os.getenv("POSTGRES_PORT")
 os.environ["POSTGRES_DB"]=os.getenv("POSTGRES_DB")
 os.environ["POSTGRES_USER"]=os.getenv("POSTGRES_USER")
 os.environ["POSTGRES_PASSWORD"]=os.getenv("POSTGRES_PASSWORD")
+os.environ["LANGSMITH_TRACING"] = os.getenv("LANGSMITH_TRACING", "false")
+os.environ["LANGSMITH_API_KEY"] = os.getenv("LANGSMITH_API_KEY", "")
+os.environ["LANGSMITH_PROJECT"] = os.getenv("LANGSMITH_PROJECT", "voicerag")
 
 class ChunkerConfig(BaseSettings):
     chunk_size: int = Field(default=800, description="The size of each text chunk.")
@@ -90,6 +93,18 @@ class PostgresConfig(BaseSettings):
         case_sensitive=False,
         extra="ignore"
     )
+    
+
+class SarvamDocIntelConfig(BaseSettings):
+    """Sarvam Document Intelligence configuration"""
+    language: str = Field(default="en-IN", description="BCP-47 language code for document processing.")
+    output_format: str = Field(default="md", description="Output format: 'md' or 'html'.")
+
+    model_config = SettingsConfigDict(
+        env_prefix="SARVAM_DOC_INTEL_",
+        case_sensitive=False,
+        extra="ignore"
+    )
   
 # Initialize configurations    
 chunker_config = ChunkerConfig()
@@ -97,6 +112,7 @@ llm_config = LLMConfig()
 embedding_config = EmbeddingConfig()
 qdrant_config = QdrantConfig()
 postgres_config = PostgresConfig()
+sarvam_di_config = SarvamDocIntelConfig()
 
 
 # Initialize models
@@ -128,3 +144,5 @@ POSTGRES_PORT=postgres_config.port
 POSTGRES_DB=postgres_config.db
 POSTGRES_USER=postgres_config.user
 POSTGRES_PASSWORD=postgres_config.password
+SARVAM_DOC_INTEL_LANGUAGE = sarvam_di_config.language
+SARVAM_DOC_INTEL_OUTPUT_FORMAT = sarvam_di_config.output_format
